@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trovex — Rent cars, bikes &amp; scooters, self-drive or with a driver</title>
-    <meta name="description" content="Rent cars, bikes, scooters, vans and trucks from verified local rental shops. Drive yourself or book with a driver, by the hour or by the day, with the full price shown before you pay.">
+    <title>ZipsWay — Discover hidden Odisha: places, rides, food and local stays</title>
+    <meta name="description" content="Find Odisha’s hidden places — mangrove creeks, hill meadows, craft villages — with how to get there, what to eat and what’s nearby, plus rides and village homestays from local hosts.">
     <meta name="color-scheme" content="light dark">
     <meta name="theme-color" content="#F8F9FA" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#0F0E1A" media="(prefers-color-scheme: dark)">
 
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Trovex">
-    <meta property="og:title" content="Trovex — Rent the right vehicle for every trip">
-    <meta property="og:description" content="Self-drive or with a driver, hourly or daily. Verified vehicles, trusted hosts and 24/7 support.">
+    <meta property="og:site_name" content="ZipsWay">
+    <meta property="og:title" content="ZipsWay — Discover the Odisha few travellers have seen">
+    <meta property="og:description" content="Hidden places, how to get there, local food and village homestays — all in one app.">
     <meta name="twitter:card" content="summary">
 
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -22,47 +22,48 @@
     <script>
         document.documentElement.classList.add('js');
         try {
-            var savedTheme = localStorage.getItem('trovex-theme');
+            var savedTheme = localStorage.getItem('zipsway-theme');
             if (savedTheme === 'light' || savedTheme === 'dark') {
                 document.documentElement.dataset.theme = savedTheme;
             }
         } catch (e) {}
     </script>
 
-    <!-- Fonts match the app: Sora for headings, Poppins for body. Material Symbols
-         is subset to just the icons used on this page (names must stay sorted). -->
+    <!-- Fonts: Sora for headings, Poppins for body. Material Symbols is subset
+         to just the icons used on this page (names must stay sorted). -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0&icon_names=add_circle,airline_seat_recline_extra,airport_shuttle,android,arrow_forward,badge,check_circle,dark_mode,directions_car,female,home,key,light_mode,local_shipping,moped,my_location,notifications,person,phone_iphone,receipt_long,schedule,search,star,storefront,support_agent,tune,two_wheeler,verified,verified_user&display=block" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0&icon_names=ac_unit,add_circle,airline_seat_recline_extra,airport_shuttle,android,arrow_downward,arrow_forward,atm,badge,calendar_month,check_circle,chevron_left,chevron_right,close,cottage,dark_mode,directions_car,eco,event_busy,female,festival,flight,flutter_dash,forest,hiking,home,key,landscape,light_mode,lightbulb,local_gas_station,local_hospital,local_shipping,location_on,moped,my_location,notifications,person,phone_iphone,receipt_long,restaurant,route,schedule,search,signal_cellular_alt,star,sunny,support_agent,train,travel_explore,tune,two_wheeler,verified,verified_user,water_drop,waves&display=block" rel="stylesheet">
 
-    <!-- Bump ?v= whenever style.css or main.js changes. GitHub Pages caches
-         files for 10 minutes and a normal reload reuses cached CSS/JS, so
-         without a new URL fresh HTML can be paired with a stale stylesheet. -->
-    <link rel="stylesheet" href="css/style.css?v=2">
-    <script src="js/main.js?v=2" defer></script>
+    <!-- Bump ?v= whenever a CSS or JS file changes. GitHub Pages caches files
+         for 10 minutes and a normal reload reuses cached CSS/JS, so without a
+         new URL fresh HTML can be paired with a stale stylesheet. -->
+    <link rel="stylesheet" href="css/style.css?v=3">
+    <script src="js/destinations.js?v=3" defer></script>
+    <script src="js/main.js?v=3" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header" data-header>
         <div class="container header-inner">
-            <a class="brand" href="#top" aria-label="Trovex home">
+            <a class="brand" href="#top" aria-label="ZipsWay home">
                 <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
                     <rect width="32" height="32" rx="9" class="brand-mark-bg"/>
-                    <path d="M9 10h14v3.5h-5.25V23h-3.5v-9.5H9z" fill="#fff"/>
-                    <circle cx="23" cy="22" r="2.5" fill="#F4A700"/>
+                    <path d="M7 9h13v3.2l-8.6 7.6H20V23H7v-3.2l8.6-7.6H7z" fill="#fff"/>
+                    <circle cx="24.4" cy="21.4" r="2.4" fill="#F4A700"/>
                 </svg>
-                <span class="brand-name">Trovex</span>
+                <span class="brand-name">ZipsWay</span>
             </a>
 
             <nav class="site-nav" id="site-nav" aria-label="Primary">
                 <ul class="nav-list">
-                    <li><a href="#how-it-works">How it works</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#safety">Trovex Promise</a></li>
-                    <li><a href="#host">Host &amp; Earn</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#food">Food</a></li>
+                    <li><a href="#seasons">When to go</a></li>
+                    <li><a href="#stays">Stays</a></li>
+                    <li><a href="#partners">Partners</a></li>
                 </ul>
                 <a class="btn btn-primary btn-sm nav-cta" href="#download">Get the app</a>
             </nav>
@@ -91,29 +92,29 @@
 
             <div class="container hero-grid">
                 <div class="hero-copy">
-                    <p class="eyebrow" data-reveal>Self-drive · With driver · Hourly or daily</p>
+                    <p class="eyebrow" data-reveal>Hidden places · Local stays · Local drivers</p>
                     <h1 class="hero-title" data-reveal style="--delay: 60ms">
-                        Rent the right vehicle for <span class="route-underline">every trip.</span>
+                        Discover the <span class="route-underline">Odisha</span> few travellers have seen.
                     </h1>
                     <p class="hero-lead" data-reveal style="--delay: 120ms">
-                        Cars, bikes, scooters, vans and trucks from verified local rental shops.
-                        Drive yourself or book with a driver — and see the full price before you pay.
+                        Mangrove creeks, hilltop meadows and painted craft villages that rarely make the guidebooks —
+                        with how to get there, what to eat and what’s nearby, all in one app.
                     </p>
                     <div class="hero-actions" data-reveal style="--delay: 180ms">
-                        <a href="#download" class="btn btn-primary btn-lg">
-                            Get the app
+                        <a href="#destinations" class="btn btn-primary btn-lg">
+                            Explore destinations
                             <span class="icon" aria-hidden="true">arrow_forward</span>
                         </a>
-                        <a href="#host" class="btn btn-secondary btn-lg">List your vehicle</a>
+                        <a href="#download" class="btn btn-secondary btn-lg">Get the app</a>
                     </div>
                     <ul class="hero-trust" data-reveal style="--delay: 240ms">
-                        <li><span class="icon filled" aria-hidden="true">verified</span>Verified vehicles</li>
-                        <li><span class="icon filled" aria-hidden="true">verified_user</span>Trusted hosts</li>
+                        <li><span class="icon filled" aria-hidden="true">verified_user</span>Verified hosts &amp; drivers</li>
+                        <li><span class="icon filled" aria-hidden="true">cottage</span>Village homestays</li>
                         <li><span class="icon filled" aria-hidden="true">support_agent</span>24/7 support</li>
                     </ul>
                 </div>
 
-                <figure class="hero-visual" role="img" aria-label="The Trovex app showing a compact SUV in Goa for ₹1,899 a day, with pickup and return times on a route timeline." data-reveal style="--delay: 120ms">
+                <figure class="hero-visual" role="img" aria-label="The ZipsWay app showing Deomali in Koraput, Odisha's highest peak, with a route from Koraput station and a button to book a ride and homestay." data-reveal style="--delay: 120ms">
                     <div class="phone">
                         <div class="phone-notch"></div>
                         <div class="phone-screen">
@@ -123,10 +124,10 @@
                             </div>
 
                             <div class="ps-header">
-                                <span class="ps-logo">T</span>
+                                <span class="ps-logo">Z</span>
                                 <span class="ps-brand">
-                                    <strong>Trovex</strong>
-                                    <small>Drive. Earn. Explore.</small>
+                                    <strong>ZipsWay</strong>
+                                    <small>Discover Odisha</small>
                                 </span>
                                 <span class="icon ps-bell">notifications</span>
                             </div>
@@ -134,58 +135,56 @@
                             <div class="ps-search">
                                 <span class="ps-search-icon"><span class="icon">search</span></span>
                                 <span class="ps-search-text">
-                                    <strong>Goa</strong>
-                                    <small>Fri 10:00 – Sun 10:00</small>
+                                    <strong>Deomali, Koraput</strong>
+                                    <small>Southern hills · Best Oct – Feb</small>
                                 </span>
                                 <span class="icon ps-tune">tune</span>
                             </div>
 
                             <div class="ps-chips">
-                                <span class="ps-chip is-active"><span class="icon">key</span>Self drive</span>
-                                <span class="ps-chip"><span class="icon">airline_seat_recline_extra</span>Driver</span>
-                                <span class="ps-chip"><span class="icon">female</span>Women</span>
+                                <span class="ps-chip is-active"><span class="icon">landscape</span>Hills</span>
+                                <span class="ps-chip"><span class="icon">waves</span>Coast</span>
+                                <span class="ps-chip"><span class="icon">forest</span>Forests</span>
                             </div>
 
                             <div class="ps-card">
                                 <div class="ps-card-media">
-                                    <svg class="car-illustration" viewBox="0 0 220 96">
-                                        <ellipse class="car-shadow" cx="112" cy="84" rx="92" ry="6"/>
-                                        <path class="car-body" d="M16 64c0-9 5-14 15-16l30-7c12-12 29-18 50-18h34c15 0 27 6 37 17l16 4c9 2 14 8 14 16v6c0 3-2 5-5 5H21c-3 0-5-2-5-5z"/>
-                                        <path class="car-window" d="M70 41c10-9 22-13 38-13h14v13zM129 28h15c11 0 19 4 27 13h-42z"/>
-                                        <rect class="car-light" x="200" y="55" width="10" height="5" rx="2.5"/>
-                                        <circle class="car-tyre" cx="56" cy="74" r="14"/>
-                                        <circle class="car-hub" cx="56" cy="74" r="6"/>
-                                        <circle class="car-tyre" cx="168" cy="74" r="14"/>
-                                        <circle class="car-hub" cx="168" cy="74" r="6"/>
-                                    </svg>
+                                    <img src="assets/img/destinations/koraput.jpg" width="960" height="443" alt="">
                                     <span class="ps-rating"><span class="icon filled">star</span>4.8</span>
                                 </div>
                                 <div class="ps-card-body">
                                     <div class="ps-card-row">
-                                        <strong>Compact SUV</strong>
-                                        <span class="ps-price">₹1,899<small>/day</small></span>
+                                        <strong>Deomali</strong>
+                                        <span class="ps-price">1,672 m</span>
                                     </div>
-                                    <small class="ps-meta">Automatic · Petrol · 5 seats</small>
+                                    <small class="ps-meta">Odisha’s highest peak · Koraput</small>
+
+                                    <div class="ps-tabs">
+                                        <span>See</span>
+                                        <span class="is-active">Getting there</span>
+                                        <span>Eat</span>
+                                        <span>Nearby</span>
+                                    </div>
 
                                     <ol class="ps-route">
                                         <li class="is-done">
-                                            <strong>Pickup</strong>
-                                            <small>Fri, 10:00 AM · Panjim</small>
+                                            <strong>Pickup · Koraput station</strong>
+                                            <small>With a local driver</small>
                                         </li>
                                         <li>
-                                            <strong>Return</strong>
-                                            <small>Sun, 10:00 AM · Panjim</small>
+                                            <strong>Deomali viewpoint</strong>
+                                            <small>~60 km by road</small>
                                         </li>
                                     </ol>
                                 </div>
                             </div>
 
-                            <div class="ps-cta">Book now · ₹3,798 + GST</div>
+                            <div class="ps-cta">Book ride + homestay</div>
 
                             <div class="ps-nav">
-                                <span class="is-active"><span class="icon filled">home</span>Home</span>
-                                <span><span class="icon">receipt_long</span>Bookings</span>
-                                <span><span class="icon">storefront</span>Host</span>
+                                <span class="is-active"><span class="icon filled">travel_explore</span>Explore</span>
+                                <span><span class="icon">receipt_long</span>Trips</span>
+                                <span><span class="icon">cottage</span>Stays</span>
                                 <span><span class="icon">person</span>Profile</span>
                             </div>
                         </div>
@@ -198,70 +197,393 @@
                             <small>Updated 15s ago</small>
                         </span>
                     </div>
-                    <div class="float-card float-female">
-                        <span class="float-icon"><span class="icon">female</span></span>
+                    <div class="float-card float-stay">
+                        <span class="float-icon"><span class="icon">cottage</span></span>
                         <span>
-                            <strong>Only female drivers</strong>
-                            <small>Driver preference</small>
+                            <strong>Village homestay</strong>
+                            <small>Meals with the family</small>
                         </span>
                     </div>
                 </figure>
             </div>
         </section>
 
-        <!-- Vehicle types -->
-        <section class="types" aria-labelledby="types-title">
-            <div class="container types-inner">
-                <h2 class="types-title" id="types-title">Whatever the trip needs</h2>
-                <ul class="types-list">
-                    <li><span class="icon" aria-hidden="true">directions_car</span>Cars</li>
-                    <li><span class="icon" aria-hidden="true">two_wheeler</span>Bikes</li>
-                    <li><span class="icon" aria-hidden="true">moped</span>Scooters</li>
-                    <li><span class="icon" aria-hidden="true">airport_shuttle</span>Vans</li>
-                    <li><span class="icon" aria-hidden="true">local_shipping</span>Trucks</li>
+        <!-- Why ZipsWay: the problem and how the app answers it -->
+        <section class="section section-surface" id="why" aria-labelledby="why-title">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <p class="eyebrow">Why ZipsWay</p>
+                    <h2 class="section-title" id="why-title">Odisha’s best places are hard to find. We fix that.</h2>
+                </div>
+
+                <div class="why-grid">
+                    <article class="card why-card" data-reveal>
+                        <p class="why-label">The problem</p>
+                        <p class="why-problem">Odisha’s most beautiful places rarely show up in search results or guidebooks.</p>
+                        <span class="why-divider" aria-hidden="true"><span class="icon">arrow_downward</span></span>
+                        <p class="why-label why-label-answer">With ZipsWay</p>
+                        <h3>A curated guide to hidden Odisha</h3>
+                        <p>Places sorted by region and season, with photos and tips from people who live there.</p>
+                    </article>
+                    <article class="card why-card" data-reveal style="--delay: 80ms">
+                        <p class="why-label">The problem</p>
+                        <p class="why-problem">Details on transport, food and basics are scattered, or out of date.</p>
+                        <span class="why-divider" aria-hidden="true"><span class="icon">arrow_downward</span></span>
+                        <p class="why-label why-label-answer">With ZipsWay</p>
+                        <h3>One page per place</h3>
+                        <p>What to see, how to get there, what to eat, and where the nearest fuel, ATM and hospital are.</p>
+                    </article>
+                    <article class="card why-card" data-reveal style="--delay: 160ms">
+                        <p class="why-label">The problem</p>
+                        <p class="why-problem">Village homestays, cooks and local drivers can’t reach the travellers looking for them.</p>
+                        <span class="why-divider" aria-hidden="true"><span class="icon">arrow_downward</span></span>
+                        <p class="why-label why-label-answer">With ZipsWay</p>
+                        <h3>Local hosts, booked directly</h3>
+                        <p>Homestays, food vendors, guides and drivers list on ZipsWay and are paid straight to their wallet.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destination guide -->
+        <section class="section" id="destinations" aria-labelledby="destinations-title">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <p class="eyebrow">Hidden Odisha</p>
+                    <h2 class="section-title" id="destinations-title">Ten places worth the detour.</h2>
+                    <p class="section-lead">Tap a place for what to see, how to get there, what to eat and what’s nearby.</p>
+                </div>
+
+                <div class="dest-filters" role="group" aria-label="Filter destinations by region" data-dest-filters>
+                    <button class="chip" type="button" aria-pressed="true" data-filter="all">All</button>
+                    <button class="chip" type="button" aria-pressed="false" data-filter="coast"><span class="icon" aria-hidden="true">waves</span>Coast &amp; lagoons</button>
+                    <button class="chip" type="button" aria-pressed="false" data-filter="hills"><span class="icon" aria-hidden="true">landscape</span>Southern hills</button>
+                    <button class="chip" type="button" aria-pressed="false" data-filter="forests"><span class="icon" aria-hidden="true">forest</span>Forests &amp; rivers</button>
+                    <button class="chip" type="button" aria-pressed="false" data-filter="west"><span class="icon" aria-hidden="true">water_drop</span>Western Odisha</button>
+                </div>
+                <p class="visually-hidden" aria-live="polite" data-dest-count></p>
+
+                <ul class="dest-grid" data-dest-grid></ul>
+                <noscript><p class="section-lead">Turn on JavaScript to browse the destination guide.</p></noscript>
+            </div>
+        </section>
+
+        <!-- Destination detail window (filled in by main.js) -->
+        <dialog class="dest-dialog" aria-labelledby="dest-title" data-dest-dialog>
+            <button class="icon-btn dest-close" type="button" aria-label="Close" data-dest-close>
+                <span class="icon" aria-hidden="true">close</span>
+            </button>
+            <img class="dest-dialog-img" src="data:," alt="" data-dest-img>
+            <div class="dest-dialog-body">
+                <p class="dest-region" data-dest-region></p>
+                <h2 id="dest-title" data-dest-name></h2>
+                <p class="dest-intro" data-dest-intro></p>
+                <ul class="dest-facts" data-dest-facts></ul>
+
+                <div class="tabs" role="tablist" aria-label="Destination details">
+                    <button class="tab" type="button" role="tab" id="tab-see" aria-controls="panel-see" aria-selected="true">See</button>
+                    <button class="tab" type="button" role="tab" id="tab-go" aria-controls="panel-go" aria-selected="false" tabindex="-1">Getting there</button>
+                    <button class="tab" type="button" role="tab" id="tab-eat" aria-controls="panel-eat" aria-selected="false" tabindex="-1">Eat</button>
+                    <button class="tab" type="button" role="tab" id="tab-nearby" aria-controls="panel-nearby" aria-selected="false" tabindex="-1">Nearby</button>
+                </div>
+                <div class="tab-panel" role="tabpanel" id="panel-see" aria-labelledby="tab-see" tabindex="0" data-panel="see"></div>
+                <div class="tab-panel" role="tabpanel" id="panel-go" aria-labelledby="tab-go" tabindex="0" data-panel="go" hidden></div>
+                <div class="tab-panel" role="tabpanel" id="panel-eat" aria-labelledby="tab-eat" tabindex="0" data-panel="eat" hidden></div>
+                <div class="tab-panel" role="tabpanel" id="panel-nearby" aria-labelledby="tab-nearby" tabindex="0" data-panel="nearby" hidden></div>
+
+                <div class="dest-actions">
+                    <a class="btn btn-primary" href="#download" data-dest-close>
+                        Plan this trip in the app
+                        <span class="icon" aria-hidden="true">arrow_forward</span>
+                    </a>
+                </div>
+                <p class="dest-note">Distances are approximate. Opening times and seasons can change, so check locally before you travel.</p>
+            </div>
+        </dialog>
+
+        <!-- Food -->
+        <section class="section section-surface" id="food" aria-labelledby="food-title">
+            <div class="container">
+                <div class="section-head section-head-split" data-reveal>
+                    <div>
+                        <p class="eyebrow">Taste of Odisha</p>
+                        <h2 class="section-title" id="food-title">Eat where it’s made.</h2>
+                        <p class="section-lead">Every destination lists its local dishes, and the homestays and vendors who cook them.</p>
+                    </div>
+                    <div class="scroller-controls" aria-hidden="true">
+                        <button class="icon-btn" type="button" tabindex="-1" data-scroll-prev="food-list"><span class="icon">chevron_left</span></button>
+                        <button class="icon-btn" type="button" tabindex="-1" data-scroll-next="food-list"><span class="icon">chevron_right</span></button>
+                    </div>
+                </div>
+
+                <ul class="scroller food-list" id="food-list" tabindex="0" aria-label="Odia dishes" data-scroller>
+                    <li class="food-card">
+                        <img src="assets/img/food/pakhala.jpg" width="500" height="333" loading="lazy" alt="A bowl of pakhala with fried fish and sides">
+                        <div class="food-body">
+                            <span class="food-region">Statewide</span>
+                            <h3>Pakhala bhata</h3>
+                            <p>Rice soaked overnight in water, eaten with fried fish, greens and badi. Odisha celebrates it every 20 March.</p>
+                        </div>
+                    </li>
+                    <li class="food-card">
+                        <img src="assets/img/food/dalma.jpg" width="500" height="342" loading="lazy" alt="Dalma in a clay bowl">
+                        <div class="food-body">
+                            <span class="food-region">Statewide</span>
+                            <h3>Dalma</h3>
+                            <p>Lentils simmered with vegetables and finished with cumin and chilli. Everyday food and temple food alike.</p>
+                        </div>
+                    </li>
+                    <li class="food-card">
+                        <img src="assets/img/food/besara.jpg" width="500" height="375" loading="lazy" alt="Fish in mustard gravy">
+                        <div class="food-body">
+                            <span class="food-region">Coast</span>
+                            <h3>Machha besara</h3>
+                            <p>Fish in a sharp mustard paste — the signature of the coastal kitchen.</p>
+                        </div>
+                    </li>
+                    <li class="food-card">
+                        <img src="assets/img/food/chhenapoda.jpg" width="500" height="332" loading="lazy" alt="A round of chhena poda with a caramelised crust">
+                        <div class="food-body">
+                            <span class="food-region">Nayagarh</span>
+                            <h3>Chhena poda</h3>
+                            <p>“Burnt cheese”: fresh chhena and sugar, baked until the outside caramelises.</p>
+                        </div>
+                    </li>
+                    <li class="food-card">
+                        <img src="assets/img/food/rasagola.jpg" width="500" height="334" loading="lazy" alt="Rasagola cooking in syrup">
+                        <div class="food-body">
+                            <span class="food-region">Pahala &amp; Puri</span>
+                            <h3>Rasagola</h3>
+                            <p>Odisha’s own GI-tagged rasagola. The roadside stalls at Pahala sell it by the pot.</p>
+                        </div>
+                    </li>
+                    <li class="food-card">
+                        <img src="assets/img/food/chhenajhili.jpg" width="500" height="375" loading="lazy" alt="Chhena jhili in syrup">
+                        <div class="food-body">
+                            <span class="food-region">Nimapara</span>
+                            <h3>Chhena jhili</h3>
+                            <p>Fried chhena dumplings soaked in syrup, from a small town near Puri.</p>
+                        </div>
+                    </li>
+                    <li class="food-card">
+                        <img src="assets/img/food/kai.jpg" width="500" height="333" loading="lazy" alt="Red-ant chutney (photographed at a festival of tribal food)">
+                        <div class="food-body">
+                            <span class="food-region">Mayurbhanj</span>
+                            <h3>Kai chutney</h3>
+                            <p>A tangy, fiery chutney of red weaver ants, made in the villages around Similipal. GI-tagged.</p>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </section>
 
-        <!-- How it works -->
-        <section class="section section-surface" id="how-it-works" aria-labelledby="how-title">
+        <!-- When to go -->
+        <section class="section" id="seasons" aria-labelledby="seasons-title">
             <div class="container">
-                <div class="section-head" data-reveal>
-                    <p class="eyebrow">How it works</p>
-                    <h2 class="section-title" id="how-title">From search to keys in four stops.</h2>
+                <div class="section-head section-head-split" data-reveal>
+                    <div>
+                        <p class="eyebrow">When to go</p>
+                        <h2 class="section-title" id="seasons-title">Odisha, month by month.</h2>
+                        <p class="section-lead">Birds, turtles, waterfalls and festivals — what’s on, and where to be.</p>
+                    </div>
+                    <div class="scroller-controls" aria-hidden="true">
+                        <button class="icon-btn" type="button" tabindex="-1" data-scroll-prev="month-list"><span class="icon">chevron_left</span></button>
+                        <button class="icon-btn" type="button" tabindex="-1" data-scroll-next="month-list"><span class="icon">chevron_right</span></button>
+                    </div>
                 </div>
 
-                <ol class="route-steps">
-                    <li class="route-step" data-reveal>
-                        <span class="route-stop">1</span>
-                        <h3>Search</h3>
-                        <p>Enter your city and dates, or drop a pin on the map for a precise pickup spot.</p>
+                <ol class="scroller month-list" id="month-list" tabindex="0" aria-label="Seasonal calendar" data-scroller data-months>
+                    <li class="month-card" data-month="1">
+                        <h3>January</h3>
+                        <ul>
+                            <li><span class="icon" aria-hidden="true">flutter_dash</span>Peak bird season at Chilika and Mangalajodi</li>
+                            <li><span class="icon" aria-hidden="true">ac_unit</span>Frosty mornings in Daringbadi</li>
+                        </ul>
                     </li>
-                    <li class="route-step" data-reveal style="--delay: 80ms">
-                        <span class="route-stop">2</span>
-                        <h3>Choose</h3>
-                        <p>Filter by vehicle type, fuel and transmission. Switch on “with driver” if you’d rather not drive.</p>
+                    <li class="month-card" data-month="2">
+                        <h3>February</h3>
+                        <ul>
+                            <li><span class="icon" aria-hidden="true">waves</span>Olive ridley turtles start mass nesting at Rushikulya and Gahirmatha</li>
+                            <li><span class="icon" aria-hidden="true">flutter_dash</span>The last of the winter birds</li>
+                        </ul>
                     </li>
-                    <li class="route-step" data-reveal style="--delay: 160ms">
-                        <span class="route-stop">3</span>
-                        <h3>Pay</h3>
-                        <p>Check the itemised price — fare, GST, extras and deposit — then pay securely in the app.</p>
+                    <li class="month-card" data-month="3">
+                        <h3>March</h3>
+                        <ul>
+                            <li><span class="icon" aria-hidden="true">waves</span>Turtle nesting continues on the southern beaches</li>
+                            <li><span class="icon" aria-hidden="true">restaurant</span>Pakhala Dibasa, 20 March</li>
+                        </ul>
                     </li>
-                    <li class="route-step is-destination" data-reveal style="--delay: 240ms">
-                        <span class="route-stop"><span class="icon" aria-hidden="true">key</span><span class="visually-hidden">4</span></span>
-                        <h3>Go</h3>
-                        <p>Collect it from the shop or have it delivered to your door, with the trip tracked live.</p>
+                    <li class="month-card" data-month="4">
+                        <h3>April</h3>
+                        <ul>
+                            <li><span class="icon" aria-hidden="true">forest</span>Dry-season sightings near water in Similipal</li>
+                            <li><span class="icon" aria-hidden="true">landscape</span>Cooler air in the Koraput hills</li>
+                        </ul>
+                    </li>
+                    <li class="month-card" data-month="5">
+                        <h3>May</h3>
+                        <ul>
+                            <li><span class="icon" aria-hidden="true">sunny</span>Hot on the plains — head for the hills</li>
+                            <li><span class="icon" aria-hidden="true">event_busy</span>Bhitarkanika closes for crocodile breeding (May – Jul)</li>
+                        </ul>
+                    </li>
+                    <li class="month-card" data-month="6">
+                        <h3>June</h3>
+                        <ul>
+                            <li><span class="icon" aria-hidden="true">festival</span>Raja Parba welcomes the monsoon</li>
+                            <li><span class="icon" aria-hidden="true">festival</span>Rath Yatra in Puri (June or July)</li>
+                            <li><span class="icon" aria-hidden="true">event_busy</span>Similipal closes in mid-June</li>
+                        </ul>
+                    </li>
+                    <li class="month-card" data-month="7">
+                        <h3>July</h3>
+                        <ul>
+                            <li><span class="icon" aria-hidden="true">water_drop</span>Monsoon green everywhere</li>
+                            <li><span class="icon" aria-hidden="true">festival</span>Rath Yatra in some years</li>
+                        </ul>
+                    </li>
+                    <li class="month-card" data-month="8">
+                        <h3>August</h3>
+                        <ul>
+                            <li><span class="icon" aria-hidden="true">water_drop</span>Duduma and the Koraput waterfalls at full strength</li>
+                            <li><span class="icon" aria-hidden="true">water_drop</span>Hirakud’s sluice gates open after heavy rain</li>
+                        </ul>
+                    </li>
+                    <li class="month-card" data-month="9">
+                        <h3>September</h3>
+                        <ul>
+                            <li><span class="icon" aria-hidden="true">festival</span>Nuakhai harvest festival in Western Odisha</li>
+                            <li><span class="icon" aria-hidden="true">water_drop</span>Waterfalls still in full flow</li>
+                        </ul>
+                    </li>
+                    <li class="month-card" data-month="10">
+                        <h3>October</h3>
+                        <ul>
+                            <li><span class="icon" aria-hidden="true">festival</span>Durga Puja in Cuttack, with silver-filigree pandals</li>
+                            <li><span class="icon" aria-hidden="true">waves</span>Calm water returns to Chilika</li>
+                        </ul>
+                    </li>
+                    <li class="month-card" data-month="11">
+                        <h3>November</h3>
+                        <ul>
+                            <li><span class="icon" aria-hidden="true">forest</span>Similipal reopens on 1 November</li>
+                            <li><span class="icon" aria-hidden="true">festival</span>Bali Jatra on the Mahanadi in Cuttack</li>
+                            <li><span class="icon" aria-hidden="true">flutter_dash</span>Migratory birds arrive</li>
+                        </ul>
+                    </li>
+                    <li class="month-card" data-month="12">
+                        <h3>December</h3>
+                        <ul>
+                            <li><span class="icon" aria-hidden="true">festival</span>Konark Dance Festival, 1–5 December</li>
+                            <li><span class="icon" aria-hidden="true">hiking</span>Riverside camping season at Satkosia</li>
+                        </ul>
                     </li>
                 </ol>
             </div>
         </section>
 
-        <!-- Features -->
-        <section class="section" id="features" aria-labelledby="features-title">
+        <!-- Homestays -->
+        <section class="section section-surface" id="stays" aria-labelledby="stays-title">
             <div class="container">
                 <div class="section-head" data-reveal>
-                    <p class="eyebrow">Features</p>
-                    <h2 class="section-title" id="features-title">Flexible where it matters. Clear where it counts.</h2>
+                    <p class="eyebrow">Stay local</p>
+                    <h2 class="section-title" id="stays-title">Sleep in a village, not a lobby.</h2>
+                    <p class="section-lead">Family-run homestays near every destination, booked in the same checkout as your ride.</p>
+                </div>
+
+                <div class="stay-grid">
+                    <article class="stay-card" data-reveal>
+                        <img src="assets/img/stays/palms.jpg" width="960" height="755" loading="lazy" alt="Thatched village homes among coconut palms in Odisha">
+                        <div class="stay-body">
+                            <span class="food-region">Coast &amp; plains</span>
+                            <h3>Coconut-grove villages</h3>
+                            <p>Courtyard homes in the shade of palms, an easy drive from Chilika, Puri and the delta.</p>
+                            <ul class="tag-list">
+                                <li>Meals with the family</li>
+                                <li>Village walk</li>
+                                <li>Pickup from the hub</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="stay-card" data-reveal style="--delay: 80ms">
+                        <img src="assets/img/stays/mayurbhanj.jpg" width="960" height="720" loading="lazy" alt="A Ho family house in Keshpada village, Mayurbhanj">
+                        <div class="stay-body">
+                            <span class="food-region">Mayurbhanj</span>
+                            <h3>Forest-edge homes near Similipal</h3>
+                            <p>Mud-walled homes kept cool by thick walls and tiled roofs, close to the reserve gates.</p>
+                            <ul class="tag-list">
+                                <li>Meals with the family</li>
+                                <li>Local forest guide</li>
+                                <li>Kai chutney on the menu</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="stay-card" data-reveal style="--delay: 160ms">
+                        <img src="assets/img/stays/rayagada.jpg" width="960" height="720" loading="lazy" alt="Khambesi, a hill village in Rayagada district">
+                        <div class="stay-body">
+                            <span class="food-region">Rayagada &amp; Koraput</span>
+                            <h3>Hill villages of the south</h3>
+                            <p>High villages in the Eastern Ghats, with terraced fields and weekly markets.</p>
+                            <ul class="tag-list">
+                                <li>Meals with the family</li>
+                                <li>Trek with a local guide</li>
+                                <li>Weekly haat visit</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+                <p class="stay-note" data-reveal><span class="icon filled" aria-hidden="true">verified_user</span>Every homestay is a family home checked by our team, and hosts are paid straight to their ZipsWay wallet.</p>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="section" id="how-it-works" aria-labelledby="how-title">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <p class="eyebrow">How it works</p>
+                    <h2 class="section-title" id="how-title">From idea to trip in four stops.</h2>
+                </div>
+
+                <ol class="route-steps">
+                    <li class="route-step" data-reveal>
+                        <span class="route-stop">1</span>
+                        <h3>Discover</h3>
+                        <p>Browse hidden places by region and season, with photos and local tips.</p>
+                    </li>
+                    <li class="route-step" data-reveal style="--delay: 80ms">
+                        <span class="route-stop">2</span>
+                        <h3>Plan</h3>
+                        <p>See how to get there, what to eat, and where the nearest fuel, ATM and hospital are.</p>
+                    </li>
+                    <li class="route-step" data-reveal style="--delay: 160ms">
+                        <span class="route-stop">3</span>
+                        <h3>Book</h3>
+                        <p>Book a vehicle — self-drive or with a driver — and a homestay in one checkout.</p>
+                    </li>
+                    <li class="route-step is-destination" data-reveal style="--delay: 240ms">
+                        <span class="route-stop"><span class="icon" aria-hidden="true">hiking</span><span class="visually-hidden">4</span></span>
+                        <h3>Go</h3>
+                        <p>Set off with the trip tracked live and a local host expecting you.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Getting around -->
+        <section class="section section-surface" id="getting-around" aria-labelledby="getting-around-title">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <p class="eyebrow">Getting around</p>
+                    <h2 class="section-title" id="getting-around-title">Your ride, from the nearest town.</h2>
+                    <p class="section-lead">Rent from verified local shops near each destination. Drive yourself, or bring a driver who knows the roads.</p>
+                    <ul class="types-list">
+                        <li><span class="icon" aria-hidden="true">directions_car</span>Cars</li>
+                        <li><span class="icon" aria-hidden="true">two_wheeler</span>Bikes</li>
+                        <li><span class="icon" aria-hidden="true">moped</span>Scooters</li>
+                        <li><span class="icon" aria-hidden="true">airport_shuttle</span>Vans</li>
+                        <li><span class="icon" aria-hidden="true">local_shipping</span>Trucks</li>
+                    </ul>
                 </div>
 
                 <div class="bento">
@@ -269,7 +591,7 @@
                         <div class="card-text">
                             <span class="card-icon"><span class="icon" aria-hidden="true">key</span></span>
                             <h3>Self-drive or with a driver</h3>
-                            <p>Take the wheel yourself, or add a verified driver to the booking. Same search, same checkout.</p>
+                            <p>Take the wheel yourself, or add a verified local driver who knows the ghat roads. Same search, same checkout.</p>
                         </div>
                         <div class="segmented" aria-hidden="true">
                             <span class="is-on"><span class="icon">key</span>Self drive</span>
@@ -287,19 +609,19 @@
                     <article class="card" data-reveal>
                         <span class="card-icon"><span class="icon" aria-hidden="true">schedule</span></span>
                         <h3>By the hour or by the day</h3>
-                        <p>Book a few hours for errands, or a few days for a road trip. Pick exact pickup and drop-off times.</p>
+                        <p>A few hours for a waterfall, or a week across the state. Pick exact pickup and drop-off times.</p>
                     </article>
 
                     <article class="card" data-reveal style="--delay: 80ms">
                         <span class="card-icon"><span class="icon" aria-hidden="true">home</span></span>
                         <h3>Delivered to your door</h3>
-                        <p>Skip the trip to the shop. Where the host offers it, have the vehicle dropped at your address.</p>
+                        <p>Where the host offers it, have the vehicle dropped at your hotel or railway station.</p>
                     </article>
 
                     <article class="card" data-reveal style="--delay: 160ms">
                         <span class="card-icon"><span class="icon" aria-hidden="true">my_location</span></span>
                         <h3>Live trip tracking</h3>
-                        <p>Every active trip shows up live on the map, refreshed every few seconds from pickup to return.</p>
+                        <p>Every active trip shows up live on the map, refreshed every few seconds — even on remote roads.</p>
                     </article>
 
                     <article class="card card-wide card-pricing" data-reveal>
@@ -336,20 +658,20 @@
             </div>
         </section>
 
-        <!-- Trovex Promise -->
+        <!-- ZipsWay Promise -->
         <section class="promise" id="safety" aria-labelledby="promise-title">
             <div class="container">
                 <div class="promise-head" data-reveal>
-                    <p class="eyebrow eyebrow-on-dark">The Trovex Promise</p>
-                    <h2 class="section-title" id="promise-title">Safe rides. Happy journeys.</h2>
-                    <p class="promise-lead">Every shop, vehicle and driver is reviewed by our team before it can take a booking — and help is always a tap away.</p>
+                    <p class="eyebrow eyebrow-on-dark">The ZipsWay Promise</p>
+                    <h2 class="section-title" id="promise-title">Safe journeys. Happy villages.</h2>
+                    <p class="promise-lead">Every host, vehicle and driver is reviewed by our team before they can take a booking — and help is always a tap away.</p>
                 </div>
 
                 <div class="promise-grid">
                     <div class="promise-item" data-reveal>
                         <span class="promise-icon"><span class="icon" aria-hidden="true">verified</span></span>
-                        <h3>Verified vehicles</h3>
-                        <p>Listings are checked and approved before they appear in search.</p>
+                        <h3>Verified listings</h3>
+                        <p>Homestays and vehicles are checked and approved before they appear in search.</p>
                     </div>
                     <div class="promise-item" data-reveal style="--delay: 80ms">
                         <span class="promise-icon"><span class="icon" aria-hidden="true">badge</span></span>
@@ -361,62 +683,75 @@
                         <h3>24/7 support</h3>
                         <p>Ask the in-app help assistant, or raise a ticket straight from any booking.</p>
                     </div>
+                    <div class="promise-item" data-reveal style="--delay: 240ms">
+                        <span class="promise-icon"><span class="icon" aria-hidden="true">eco</span></span>
+                        <h3>Travel lightly</h3>
+                        <p>Ask before photographing people, keep plastic out of forests and lagoons, and follow park rules.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Host & Earn -->
-        <section class="section" id="host" aria-labelledby="host-title">
+        <!-- Local partners -->
+        <section class="section" id="partners" aria-labelledby="partners-title">
             <div class="container host-grid">
                 <div class="host-copy">
                     <div class="section-head section-head-left" data-reveal>
-                        <p class="eyebrow">Host &amp; Earn</p>
-                        <h2 class="section-title" id="host-title">Make money with your vehicle.</h2>
-                        <p class="section-lead">List one vehicle or your whole rental shop. You set the price — Trovex brings the bookings.</p>
+                        <p class="eyebrow">Grow with ZipsWay</p>
+                        <h2 class="section-title" id="partners-title">Bring travellers to your village.</h2>
+                        <p class="section-lead">Homestay owners, cooks, guides and drivers list directly on ZipsWay. You set the price — we bring the bookings.</p>
                     </div>
 
                     <ol class="route-list">
                         <li data-reveal>
-                            <strong>List your vehicle</strong>
-                            <span>Add photos and details, and set your price.</span>
+                            <strong>List what you offer</strong>
+                            <span>A room, a kitchen, a guided walk or a vehicle — add photos and set your price.</span>
                         </li>
                         <li data-reveal style="--delay: 60ms">
-                            <strong>Get bookings</strong>
-                            <span>Customers book your vehicle for their trip.</span>
+                            <strong>Get verified</strong>
+                            <span>Our team checks your details before you go live.</span>
                         </li>
                         <li data-reveal style="--delay: 120ms">
-                            <strong>Host the trip</strong>
-                            <span>Hand over the keys and follow the trip live.</span>
+                            <strong>Host travellers</strong>
+                            <span>Bookings arrive in the app, with the guest’s trip details.</span>
                         </li>
                         <li class="is-destination" data-reveal style="--delay: 180ms">
                             <strong>Get paid</strong>
-                            <span>Earnings land securely in your Trovex wallet.</span>
+                            <span>Earnings land securely in your ZipsWay wallet.</span>
                         </li>
                     </ol>
                 </div>
 
                 <div class="join-list">
                     <a class="join-card" href="#download" data-reveal>
-                        <span class="card-icon"><span class="icon" aria-hidden="true">directions_car</span></span>
+                        <span class="card-icon"><span class="icon" aria-hidden="true">cottage</span></span>
                         <span class="join-text">
-                            <strong>List a vehicle</strong>
-                            <span>For individuals with a car, bike or scooter that sits idle.</span>
+                            <strong>Homestay owners</strong>
+                            <span>Turn a spare room into income, with guests who want the real village.</span>
                         </span>
                         <span class="icon join-arrow" aria-hidden="true">arrow_forward</span>
                     </a>
                     <a class="join-card" href="#download" data-reveal style="--delay: 80ms">
-                        <span class="card-icon"><span class="icon" aria-hidden="true">storefront</span></span>
+                        <span class="card-icon"><span class="icon" aria-hidden="true">restaurant</span></span>
                         <span class="join-text">
-                            <strong>Register a shop</strong>
-                            <span>For rental businesses. Manage your fleet, bookings and earnings in one dashboard.</span>
+                            <strong>Food vendors &amp; home cooks</strong>
+                            <span>Get your stall or kitchen onto the destination pages travellers read.</span>
                         </span>
                         <span class="icon join-arrow" aria-hidden="true">arrow_forward</span>
                     </a>
                     <a class="join-card" href="#download" data-reveal style="--delay: 160ms">
-                        <span class="card-icon"><span class="icon" aria-hidden="true">airline_seat_recline_extra</span></span>
+                        <span class="card-icon"><span class="icon" aria-hidden="true">hiking</span></span>
                         <span class="join-text">
-                            <strong>Drive with Trovex</strong>
-                            <span>Hold a driving licence? Register, get approved and accept ride requests.</span>
+                            <strong>Local guides</strong>
+                            <span>Offer treks, boat rides, birdwatching and craft walks.</span>
+                        </span>
+                        <span class="icon join-arrow" aria-hidden="true">arrow_forward</span>
+                    </a>
+                    <a class="join-card" href="#download" data-reveal style="--delay: 240ms">
+                        <span class="card-icon"><span class="icon" aria-hidden="true">directions_car</span></span>
+                        <span class="join-text">
+                            <strong>Drivers &amp; rental shops</strong>
+                            <span>List your vehicles or drive with ZipsWay, and serve travellers from your town.</span>
                         </span>
                         <span class="icon join-arrow" aria-hidden="true">arrow_forward</span>
                     </a>
@@ -435,28 +770,32 @@
 
                 <div class="faq-list" data-reveal>
                     <details>
-                        <summary>Do I have to drive myself?</summary>
-                        <p>No. Every search has a “with driver” switch. Turn it on to see only vehicles that come with a driver, or leave it off for self-drive.</p>
+                        <summary>Is it safe to travel to remote parts of Odisha?</summary>
+                        <p>Every host, driver and vehicle on ZipsWay is verified before it can take a booking, trips are tracked live, and support is available 24/7. Women booking with a driver can choose to be matched only with female drivers.</p>
                     </details>
                     <details>
-                        <summary>Can I rent for just a few hours?</summary>
-                        <p>Yes. Choose an hourly rental with a pickup and drop-off time, or a daily rental for longer trips.</p>
+                        <summary>Will my phone work in the hills and forests?</summary>
+                        <p>Not everywhere. Coverage is patchy or absent in places like Similipal, the Satkosia gorge and around Deomali. Each destination’s Nearby tab notes the network situation, so you know when to save details ahead and carry cash.</p>
                     </details>
                     <details>
-                        <summary>What’s included in the price?</summary>
-                        <p>The breakdown lists the base fare, 18% GST, any extras you add and the delivery fee if you choose doorstep delivery. A refundable security deposit is shown separately and collected at pickup.</p>
+                        <summary>How do homestays work?</summary>
+                        <p>Pick a family-run homestay near your destination and book it in the same checkout as your ride. Meals with the family are usually included, and you pay in the app.</p>
+                    </details>
+                    <details>
+                        <summary>Can I hire a local guide or a driver who knows the area?</summary>
+                        <p>Yes. Add a local guide for treks, boat rides or village walks, or book your vehicle with a driver from a rental shop near the destination.</p>
+                    </details>
+                    <details>
+                        <summary>Do national parks have fixed seasons?</summary>
+                        <p>Several do. Bhitarkanika closes from May to July for crocodile breeding, and Similipal is open from November to mid-June. Each destination lists its season — check locally before you go.</p>
+                    </details>
+                    <details>
+                        <summary>What’s included in a rental price?</summary>
+                        <p>The breakdown lists the base fare, 18% GST, any extras and the delivery fee if you choose doorstep delivery. A refundable security deposit is shown separately and collected at pickup.</p>
                     </details>
                     <details>
                         <summary>What happens if I cancel?</summary>
-                        <p>The app shows your estimated refund before you confirm the cancellation. Cancellation charges are set per vehicle, so check the listing. Once a trip has started it can no longer be refunded.</p>
-                    </details>
-                    <details>
-                        <summary>How does the female-driver option work?</summary>
-                        <p>Women booking with a driver can pick “Only female drivers”, and they’ll be matched only with women drivers.</p>
-                    </details>
-                    <details>
-                        <summary>How do I list my vehicle or shop?</summary>
-                        <p>Open the Host &amp; Earn tab in the app. List a single vehicle as an individual, or register your shop to manage a fleet. Our team reviews every listing before it goes live.</p>
+                        <p>The app shows your estimated refund before you confirm. Cancellation charges are set per listing, so check before you book. Once a trip has started it can no longer be refunded.</p>
                     </details>
                 </div>
             </div>
@@ -470,8 +809,8 @@
                         <path d="M-20 288 C 150 292, 250 282, 300 200 S 360 36, 620 22"/>
                     </svg>
                     <div class="download-copy">
-                        <h2 class="section-title" id="download-title">Your next trip starts in the app.</h2>
-                        <p>Search, book, pay and track, all from your phone.</p>
+                        <h2 class="section-title" id="download-title">Your Odisha trip starts in the app.</h2>
+                        <p>Find a place, plan the route, book the ride and the stay — all from your phone.</p>
                     </div>
                     <!-- TODO: replace both hrefs with the live store listing URLs. -->
                     <div class="store-buttons">
@@ -492,29 +831,31 @@
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <a class="brand" href="#top" aria-label="Trovex home">
+                <a class="brand" href="#top" aria-label="ZipsWay home">
                     <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
                         <rect width="32" height="32" rx="9" class="brand-mark-bg"/>
-                        <path d="M9 10h14v3.5h-5.25V23h-3.5v-9.5H9z" fill="#fff"/>
-                        <circle cx="23" cy="22" r="2.5" fill="#F4A700"/>
+                        <path d="M7 9h13v3.2l-8.6 7.6H20V23H7v-3.2l8.6-7.6H7z" fill="#fff"/>
+                        <circle cx="24.4" cy="21.4" r="2.4" fill="#F4A700"/>
                     </svg>
-                    <span class="brand-name">Trovex</span>
+                    <span class="brand-name">ZipsWay</span>
                 </a>
-                <p>Drive. Earn. Explore.</p>
+                <p>Discover Odisha, the local way.</p>
             </div>
 
             <nav class="footer-col" aria-label="Explore">
                 <h2>Explore</h2>
-                <a href="#how-it-works">How it works</a>
-                <a href="#features">Features</a>
-                <a href="#safety">Trovex Promise</a>
+                <a href="#destinations">Destinations</a>
+                <a href="#food">Taste of Odisha</a>
+                <a href="#seasons">When to go</a>
+                <a href="#stays">Homestays</a>
                 <a href="#faq">FAQ</a>
             </nav>
             <nav class="footer-col" aria-label="Partner with us">
                 <h2>Partner with us</h2>
-                <a href="#host">List a vehicle</a>
-                <a href="#host">Register a shop</a>
-                <a href="#host">Drive with Trovex</a>
+                <a href="#partners">Homestay owners</a>
+                <a href="#partners">Food vendors</a>
+                <a href="#partners">Local guides</a>
+                <a href="#partners">Drivers &amp; rental shops</a>
             </nav>
             <!-- TODO: point these at real pages once they exist. -->
             <nav class="footer-col" aria-label="Company">
@@ -526,7 +867,33 @@
             </nav>
         </div>
         <div class="container">
-            <p class="footer-bottom">&copy; <span data-year>2026</span> Trovex. All rights reserved.</p>
+            <details class="credits">
+                <summary>Photo credits</summary>
+                <p>Photos from Wikimedia Commons, used under the licences shown and cropped for layout.</p>
+                <ul>
+                        <li>Mangalajodi: <a href="https://commons.wikimedia.org/wiki/File:Mangalajodi_on_the_banks_of_the_Chilika_lake.jpg">“Mangalajodi on the banks of the Chilika lake”</a> by Neerakiran, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+                        <li>Satapada: <a href="https://commons.wikimedia.org/wiki/File:Satapada_5.jpg">“Satapada 5”</a> by Rangan Datta Wiki, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+                        <li>Daringbadi: <a href="https://commons.wikimedia.org/wiki/File:Silence_valley,_Daringbari.JPG">“Silence valley, Daringbari”</a> by সন্দীপ সরকার, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a></li>
+                        <li>Deomali, Koraput: <a href="https://commons.wikimedia.org/wiki/File:Deomali_hill_top_Koraput_India.jpg">“Deomali hill top Koraput India”</a> by BubunTalk, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+                        <li>Bhitarkanika: <a href="https://commons.wikimedia.org/wiki/File:Bhitarkanika_National_Park_inside_pathway_.jpg">“Bhitarkanika National Park inside pathway”</a> by Rupeshsarkar, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+                        <li>Satkosia: <a href="https://commons.wikimedia.org/wiki/File:Beautiful_Mahanadhi,_Satkosia_TR,_June_2013,_AJTJ._DSCN7287.jpg">“Beautiful Mahanadhi, Satkosia TR, June 2013, AJTJ. DSCN7287”</a> by A. J. T. Johnsingh, WWF-India and NCF, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+                        <li>Similipal: <a href="https://commons.wikimedia.org/wiki/File:Elephas_maximus_indicus_or_indian_elephants_near_simlipal_national_park.jpg">“Elephas maximus indicus or indian elephants near simlipal national park”</a> by dibyaranjan giri, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+                        <li>Raghurajpur: <a href="https://commons.wikimedia.org/wiki/File:Raghurajpur_-_Decorated_Village_House.jpg">“Raghurajpur - Decorated Village House”</a> by Sumit Surai, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+                        <li>Chandipur: <a href="https://commons.wikimedia.org/wiki/File:Sunset_at_Chandipur_Sea_Beach,_Odisha.jpg">“Sunset at Chandipur Sea Beach, Odisha”</a> by Nihar.race, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+                        <li>Hirakud: <a href="https://commons.wikimedia.org/wiki/File:Hirakud_Dam.jpg">“Hirakud Dam”</a> by Government of Odisha, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a></li>
+                        <li>Pakhala bhata: <a href="https://commons.wikimedia.org/wiki/File:Pakhala_bhat.jpg">“Pakhala bhat”</a> by Subhransu, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+                        <li>Dalma: <a href="https://commons.wikimedia.org/wiki/File:Dalma(dish).jpg">“Dalma(dish)”</a> by Sibani, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+                        <li>Machha besara: <a href="https://commons.wikimedia.org/wiki/File:Machha_Besara_(_%E0%AC%AE%E0%AC%BE%E0%AC%9B_%E0%AC%AC%E0%AD%87%E0%AC%B8%E0%AC%B0_).jpg">“Machha Besara ( ମାଛ ବେସର )”</a> by Kumarnihar, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+                        <li>Chhena poda: <a href="https://commons.wikimedia.org/wiki/File:Chhena_Poda_-_Choudwar_-_Cuttack_2018-01-26_9970.JPG">“Chhena Poda - Choudwar - Cuttack 2018-01-26 9970”</a> by Biswarup Ganguly, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+                        <li>Rasagola: <a href="https://commons.wikimedia.org/wiki/File:Rasgulla_preparation_for_Indian_wedding_12.jpg">“Rasgulla preparation for Indian wedding 12”</a> by Satdeep Gill, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+                        <li>Chhena jhili: <a href="https://commons.wikimedia.org/wiki/File:Chennajhilli.jpg">“Chennajhilli”</a> by Amarnathjena, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+                        <li>Red-ant chutney: <a href="https://commons.wikimedia.org/wiki/File:Chhapra_Chutney_made_from_Red_Ant_a_food_of_Baster_region_at_Aadi_Mahotsav_MG_8684.jpg">“Chhapra Chutney made from Red Ant a food of Baster region at Aadi Mahotsav MG 8684”</a> by Sumita Roy Dutta, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+                        <li>Village homes: <a href="https://commons.wikimedia.org/wiki/File:Odisha_village_(1).jpg">“Odisha village (1)”</a> by Radosław Botev, <a href="https://creativecommons.org/licenses/by/3.0/pl/deed.en">CC BY 3.0 pl</a></li>
+                        <li>Mayurbhanj homes: <a href="https://commons.wikimedia.org/wiki/File:Ho_house_in_Keshpada_village,_Mayurbhanj_district,_Odisha.jpg">“Ho house in Keshpada village, Mayurbhanj district, Odisha”</a> by Subhashish Panigrahi, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+                        <li>Rayagada hill village: <a href="https://commons.wikimedia.org/wiki/File:Khambesi_village_at_higher_altitude.jpg">“Khambesi village at higher altitude”</a> by Hpsatapathy, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a></li>
+                </ul>
+            </details>
+            <p class="footer-bottom">&copy; <span data-year>2026</span> ZipsWay. All rights reserved.</p>
         </div>
     </footer>
 </body>
