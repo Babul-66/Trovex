@@ -34,14 +34,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0&icon_names=ac_unit,add_circle,airline_seat_recline_extra,airport_shuttle,android,arrow_downward,arrow_forward,atm,badge,calendar_month,check_circle,chevron_left,chevron_right,close,cottage,dark_mode,directions_car,eco,event_busy,female,festival,flight,flutter_dash,forest,hiking,home,key,landscape,light_mode,lightbulb,local_gas_station,local_hospital,local_shipping,location_on,moped,my_location,notifications,person,phone_iphone,receipt_long,restaurant,route,schedule,search,signal_cellular_alt,star,sunny,support_agent,train,travel_explore,tune,two_wheeler,verified,verified_user,water_drop,waves&display=block" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0&icon_names=ac_unit,add,add_circle,airline_seat_recline_extra,airport_shuttle,android,arrow_downward,arrow_forward,arrow_upward,atm,badge,beach_access,calendar_month,check,check_circle,chevron_left,chevron_right,close,cottage,dark_mode,directions_car,eco,event_busy,female,festival,flight,flutter_dash,forest,groups,hiking,home,insights,key,landscape,light_mode,lightbulb,local_gas_station,local_hospital,local_shipping,location_on,luggage,map,moped,my_location,notifications,palette,park,payments,person,phone_iphone,receipt_long,restaurant,route,sailing,schedule,search,signal_cellular_alt,star,sunny,support_agent,touch_app,train,translate,travel_explore,tune,two_wheeler,verified,verified_user,water_drop,waves&display=block" rel="stylesheet">
 
     <!-- Bump ?v= whenever a CSS or JS file changes. GitHub Pages caches files
          for 10 minutes and a normal reload reuses cached CSS/JS, so without a
          new URL fresh HTML can be paired with a stale stylesheet. -->
-    <link rel="stylesheet" href="css/style.css?v=3">
-    <script src="js/destinations.js?v=3" defer></script>
-    <script src="js/main.js?v=3" defer></script>
+    <link rel="stylesheet" href="css/style.css?v=4">
+    <script src="js/destinations.js?v=4" defer></script>
+    <script src="js/main.js?v=4" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -60,8 +60,8 @@
             <nav class="site-nav" id="site-nav" aria-label="Primary">
                 <ul class="nav-list">
                     <li><a href="#destinations">Destinations</a></li>
-                    <li><a href="#food">Food</a></li>
-                    <li><a href="#seasons">When to go</a></li>
+                    <li><a href="#guides">Guides</a></li>
+                    <li><a href="#plan">Plan a trip</a></li>
                     <li><a href="#stays">Stays</a></li>
                     <li><a href="#partners">Partners</a></li>
                 </ul>
@@ -92,13 +92,13 @@
 
             <div class="container hero-grid">
                 <div class="hero-copy">
-                    <p class="eyebrow" data-reveal>Hidden places · Local stays · Local drivers</p>
+                    <p class="eyebrow" data-reveal>Places · Maps · Local guides · Stays — one app</p>
                     <h1 class="hero-title" data-reveal style="--delay: 60ms">
                         Discover the <span class="route-underline">Odisha</span> few travellers have seen.
                     </h1>
                     <p class="hero-lead" data-reveal style="--delay: 120ms">
                         Mangrove creeks, hilltop meadows and painted craft villages that rarely make the guidebooks —
-                        with how to get there, what to eat and what’s nearby, all in one app.
+                        with maps, local guides, how to get there and what’s nearby, all in one app.
                     </p>
                     <div class="hero-actions" data-reveal style="--delay: 180ms">
                         <a href="#destinations" class="btn btn-primary btn-lg">
@@ -245,23 +245,100 @@
             </div>
         </section>
 
-        <!-- Destination guide -->
-        <section class="section" id="destinations" aria-labelledby="destinations-title">
+        <!-- The innovation: one platform instead of many sources -->
+        <section class="section" id="platform" aria-labelledby="platform-title">
+            <div class="container platform-grid">
+                <div class="platform-copy">
+                    <div class="section-head section-head-left" data-reveal>
+                        <p class="eyebrow">All in one place</p>
+                        <h2 class="section-title" id="platform-title">Everything for the trip, in a single app.</h2>
+                        <p class="section-lead">ZipsWay brings travel information, maps and local guides together, so planning an Odisha trip takes minutes instead of days.</p>
+                    </div>
+
+                    <div class="compare" data-reveal>
+                        <div class="compare-col compare-before">
+                            <p class="compare-label">Planning today</p>
+                            <ul>
+                                <li><span class="icon" aria-hidden="true">close</span>Guidebooks that skip the offbeat places</li>
+                                <li><span class="icon" aria-hidden="true">close</span>A map app, a forum thread and a weather site</li>
+                                <li><span class="icon" aria-hidden="true">close</span>Phone calls to find a driver or a room</li>
+                                <li><span class="icon" aria-hidden="true">close</span>No idea where the next ATM or hospital is</li>
+                            </ul>
+                        </div>
+                        <div class="compare-col compare-after">
+                            <p class="compare-label">With ZipsWay</p>
+                            <ul>
+                                <li><span class="icon" aria-hidden="true">check</span>Hidden places, mapped and explained</li>
+                                <li><span class="icon" aria-hidden="true">check</span>Routes, seasons and local food on one page</li>
+                                <li><span class="icon" aria-hidden="true">check</span>Ride, homestay and guide in one checkout</li>
+                                <li><span class="icon" aria-hidden="true">check</span>Fuel, cash, medical care and network nearby</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hub" data-reveal aria-label="What ZipsWay brings together" role="img">
+                    <div class="hub-ring" aria-hidden="true"></div>
+                    <div class="hub-center" aria-hidden="true">
+                        <svg viewBox="0 0 32 32">
+                            <rect width="32" height="32" rx="9" fill="#1B1464"/>
+                            <path d="M7 9h13v3.2l-8.6 7.6H20V23H7v-3.2l8.6-7.6H7z" fill="#fff"/>
+                            <circle cx="24.4" cy="21.4" r="2.4" fill="#F4A700"/>
+                        </svg>
+                        <strong>ZipsWay</strong>
+                    </div>
+                    <ul class="hub-nodes" aria-hidden="true">
+                        <li style="--i: 0"><span class="icon">travel_explore</span>Places</li>
+                        <li style="--i: 1"><span class="icon">map</span>Map</li>
+                        <li style="--i: 2"><span class="icon">route</span>Getting there</li>
+                        <li style="--i: 3"><span class="icon">restaurant</span>Food</li>
+                        <li style="--i: 4"><span class="icon">cottage</span>Stays</li>
+                        <li style="--i: 5"><span class="icon">hiking</span>Local guides</li>
+                        <li style="--i: 6"><span class="icon">local_hospital</span>Essentials</li>
+                        <li style="--i: 7"><span class="icon">calendar_month</span>Seasons</li>
+                    </ul>
+                    <span class="visually-hidden">Places, map, getting there, food, stays, local guides, essentials and seasons, all inside the ZipsWay app.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destination guide + map -->
+        <section class="section section-surface" id="destinations" aria-labelledby="destinations-title">
             <div class="container">
                 <div class="section-head" data-reveal>
                     <p class="eyebrow">Hidden Odisha</p>
                     <h2 class="section-title" id="destinations-title">Ten places worth the detour.</h2>
-                    <p class="section-lead">Tap a place for what to see, how to get there, what to eat and what’s nearby.</p>
+                    <p class="section-lead">Tap a pin or a card for what to see, how to get there, what to eat, who can guide you and what’s nearby.</p>
                 </div>
 
-                <div class="dest-filters" role="group" aria-label="Filter destinations by region" data-dest-filters>
-                    <button class="chip" type="button" aria-pressed="true" data-filter="all">All</button>
-                    <button class="chip" type="button" aria-pressed="false" data-filter="coast"><span class="icon" aria-hidden="true">waves</span>Coast &amp; lagoons</button>
-                    <button class="chip" type="button" aria-pressed="false" data-filter="hills"><span class="icon" aria-hidden="true">landscape</span>Southern hills</button>
-                    <button class="chip" type="button" aria-pressed="false" data-filter="forests"><span class="icon" aria-hidden="true">forest</span>Forests &amp; rivers</button>
-                    <button class="chip" type="button" aria-pressed="false" data-filter="west"><span class="icon" aria-hidden="true">water_drop</span>Western Odisha</button>
+                <div class="explore-grid">
+                    <figure class="map-card" data-reveal>
+                        <div class="map" data-map>
+                            <svg class="map-svg" viewBox="0 0 1000 839" aria-hidden="true">
+                                <path class="map-land" d="M20.0 817.4L32.7 814.3L35.2 818.6L48.1 814.3L54.9 816.9L63.4 806.0L68.1 803.5L69.6 808.4L72.0 807.5L85.0 794.5L109.2 787.0L120.0 775.4L141.6 778.3L144.5 784.5L156.9 787.9L156.2 780.0L160.9 775.5L163.5 779.5L168.7 777.9L168.5 761.9L172.2 764.4L173.6 762.2L163.9 752.8L168.1 749.4L166.1 748.2L169.3 739.9L176.8 737.0L176.3 731.9L168.3 732.2L175.7 725.3L172.4 716.3L191.0 694.9L194.5 700.8L199.1 701.3L197.1 709.0L200.1 712.5L200.4 710.2L203.7 711.8L199.6 719.0L209.0 721.8L213.1 726.8L206.6 734.1L209.3 736.0L207.6 740.7L215.5 747.3L217.8 745.1L216.2 736.3L237.0 729.9L241.0 718.7L238.2 714.7L241.5 711.6L249.4 716.5L256.3 715.9L256.2 723.1L263.1 726.5L276.0 721.3L281.2 723.2L284.7 719.3L281.6 716.6L283.2 714.8L279.3 715.8L275.9 710.4L287.5 695.2L279.7 695.6L277.3 690.7L280.9 686.4L276.6 688.1L272.7 685.0L274.6 678.5L281.7 675.3L294.5 655.1L305.1 660.8L306.0 664.3L308.0 656.8L315.3 658.6L317.4 653.0L324.7 651.6L330.2 645.4L332.4 647.5L336.5 645.5L337.9 640.3L328.3 630.8L330.5 625.4L328.2 624.8L327.8 631.6L325.2 631.6L325.3 624.4L321.5 619.3L326.0 619.6L326.6 616.0L335.7 617.5L345.4 626.7L346.3 620.6L343.5 617.4L348.2 617.6L348.7 613.4L345.4 608.4L348.0 605.7L346.3 603.4L351.5 608.7L353.5 607.4L354.7 612.7L351.1 613.3L351.8 615.8L357.2 617.3L360.4 609.6L359.1 605.5L364.7 609.3L364.9 604.5L368.8 602.9L367.0 597.2L371.2 591.7L383.2 615.0L387.9 615.6L384.7 618.8L388.4 621.3L391.6 631.6L396.7 633.2L390.4 619.8L397.8 616.0L403.2 633.3L406.2 633.8L406.2 641.2L413.3 650.2L416.9 648.0L422.3 651.8L436.2 649.9L444.6 659.8L465.9 652.9L471.1 655.5L475.7 652.0L480.8 654.8L484.5 652.3L482.3 649.6L487.7 646.1L482.6 638.9L489.2 642.3L490.7 640.1L486.9 636.8L492.0 639.8L489.9 635.1L496.1 636.3L496.2 632.8L499.2 632.3L497.1 627.9L501.4 622.8L496.6 615.4L505.2 620.8L511.6 610.9L520.5 606.7L521.9 614.0L525.0 614.8L527.6 608.0L535.9 606.2L534.0 603.2L528.8 604.8L524.0 596.8L535.4 597.3L535.9 591.2L542.5 592.6L541.0 599.3L551.1 606.2L559.2 591.5L577.1 572.8L646.9 518.5L711.2 488.0L807.5 458.5L810.5 455.5L804.6 457.9L828.4 422.1L853.0 407.6L851.3 404.9L852.9 406.9L869.2 395.8L868.2 393.2L873.4 388.3L872.7 384.2L870.6 386.2L873.5 375.4L871.4 368.5L869.6 386.8L863.0 387.6L861.9 384.5L860.0 387.7L857.7 384.7L861.0 382.2L859.8 370.6L863.9 371.6L864.4 364.3L866.5 366.6L912.2 331.2L906.9 321.9L881.5 321.1L872.8 328.1L882.3 319.6L898.4 318.3L899.9 313.0L899.8 306.7L880.1 267.1L878.3 256.8L881.9 245.9L896.3 221.9L911.3 211.1L914.1 205.5L935.3 194.1L965.6 193.8L956.4 186.4L963.7 186.9L967.7 191.6L971.4 186.2L979.8 182.1L980.0 177.3L976.2 173.9L977.4 160.3L973.5 160.0L972.8 153.8L961.6 154.9L959.5 150.4L947.0 148.0L941.1 132.1L943.7 127.8L940.6 122.5L930.2 118.8L928.9 126.1L918.6 129.8L919.0 137.9L909.4 137.5L903.7 129.8L908.3 117.7L907.9 109.0L897.9 100.9L877.9 98.9L871.2 89.0L859.6 90.7L860.4 78.9L849.2 75.7L847.7 70.4L839.7 68.7L838.0 64.8L830.0 64.7L824.1 57.0L814.0 63.8L802.5 56.7L790.5 40.1L764.5 33.6L752.9 20.0L750.3 27.3L743.3 28.8L739.0 37.3L748.6 43.8L750.0 49.0L749.6 54.1L745.5 57.9L750.4 59.2L748.3 62.9L753.5 63.6L741.7 73.8L750.7 83.4L745.3 93.1L747.2 95.9L736.9 111.9L732.9 113.7L731.2 120.3L708.9 116.2L713.6 101.8L720.3 102.0L715.4 95.8L696.2 106.2L691.2 99.4L682.6 102.2L674.1 100.3L654.9 88.8L646.7 88.3L645.8 94.7L639.1 93.9L632.5 100.1L625.8 113.7L616.7 103.1L615.6 106.7L612.5 102.1L607.4 103.4L603.7 97.5L594.5 95.9L586.1 101.4L592.6 94.8L599.3 69.2L606.6 65.9L606.7 62.0L602.6 62.2L603.2 57.4L600.2 55.5L602.0 50.2L597.5 40.0L600.3 37.4L598.7 34.0L581.7 40.6L580.9 38.3L570.2 44.8L569.2 39.9L562.4 42.9L558.2 39.2L550.2 40.3L548.7 45.0L514.9 43.6L506.2 45.9L507.0 49.9L498.4 52.7L498.2 56.1L476.4 57.7L470.0 51.7L461.5 51.8L455.1 46.8L451.6 35.0L439.9 28.6L427.6 27.5L427.4 30.9L438.0 36.5L432.1 52.9L409.1 57.7L392.3 75.0L383.8 73.9L375.3 77.8L361.8 97.6L368.5 104.1L365.4 107.1L358.6 105.8L357.4 110.6L360.4 114.2L357.7 120.5L360.6 126.2L368.3 129.8L363.7 135.0L366.0 140.3L363.7 143.6L356.7 143.6L358.4 149.2L350.6 145.9L346.8 151.0L350.2 158.2L345.5 166.1L341.0 165.7L338.8 169.1L350.1 177.2L344.8 180.8L342.7 173.2L333.2 179.1L331.6 189.6L326.1 199.0L328.7 208.0L335.7 215.2L337.0 224.2L332.6 225.4L315.2 219.7L313.5 229.8L316.9 233.8L315.6 237.5L312.4 235.9L307.9 238.6L304.1 258.9L293.6 265.5L275.4 258.7L271.3 259.8L273.4 255.0L267.4 253.9L267.3 250.8L264.6 256.1L257.4 255.3L254.3 258.4L249.4 255.0L240.3 259.3L234.4 255.3L216.2 257.3L217.7 265.4L211.7 270.9L214.4 276.8L203.5 292.2L192.1 298.6L192.1 306.7L188.6 312.2L181.6 311.8L179.3 305.3L172.8 305.2L170.5 301.8L169.7 328.4L174.6 345.0L167.6 356.8L176.6 364.4L177.8 374.3L181.2 370.6L184.3 378.3L178.3 394.0L184.2 402.0L180.1 406.9L181.7 416.9L176.2 426.9L178.1 441.7L209.3 452.9L216.5 450.4L228.0 452.1L226.7 467.7L229.4 472.2L226.7 479.0L218.0 479.4L208.5 488.9L206.0 479.2L210.3 473.6L185.5 466.3L177.5 470.1L169.6 478.8L152.6 450.7L144.3 453.9L126.3 441.7L120.3 448.6L118.0 443.0L106.8 433.6L98.7 443.1L94.9 443.8L90.8 458.0L92.1 464.9L110.2 474.8L113.0 484.7L125.5 486.4L122.3 500.1L123.2 527.0L119.8 533.9L131.0 532.4L135.1 547.1L145.1 547.4L143.4 555.5L138.4 557.9L145.8 564.5L140.2 574.7L140.7 585.2L144.5 591.3L141.4 596.9L142.6 599.4L147.6 598.4L147.5 602.9L149.6 602.9L147.1 608.0L151.9 616.2L154.0 632.8L143.0 635.6L140.5 639.6L141.3 653.0L136.2 658.6L129.6 658.6L128.6 666.5L120.1 665.6L110.6 669.8L107.2 679.1L98.5 676.7L98.6 681.5L109.5 688.0L107.4 691.4L101.1 691.3L100.9 696.8L94.4 699.0L92.3 704.8L78.9 716.8L75.8 727.8L61.5 729.0L62.0 733.2L51.8 735.3L40.4 743.8L37.5 755.9L40.5 761.4L33.4 778.6L33.7 791.1L28.4 798.6L27.7 806.4L20.5 805.3L20.0 817.4Z"/>
+                            </svg>
+                            <!-- Hub labels and destination pins are added by main.js. -->
+                        </div>
+                        <figcaption class="map-caption"><span class="icon" aria-hidden="true">map</span>Odisha · positions are approximate</figcaption>
+                    </figure>
+
+                    <div class="map-aside" data-reveal style="--delay: 80ms">
+                        <h3>Filter by region</h3>
+                        <div class="dest-filters" role="group" aria-label="Filter destinations by region" data-dest-filters>
+                            <button class="chip" type="button" aria-pressed="true" data-filter="all"><span class="region-dot" aria-hidden="true"></span>All regions</button>
+                            <button class="chip" type="button" aria-pressed="false" data-filter="coast"><span class="region-dot region-coast" aria-hidden="true"></span>Coast &amp; lagoons</button>
+                            <button class="chip" type="button" aria-pressed="false" data-filter="hills"><span class="region-dot region-hills" aria-hidden="true"></span>Southern hills</button>
+                            <button class="chip" type="button" aria-pressed="false" data-filter="forests"><span class="region-dot region-forests" aria-hidden="true"></span>Forests &amp; rivers</button>
+                            <button class="chip" type="button" aria-pressed="false" data-filter="west"><span class="region-dot region-west" aria-hidden="true"></span>Western Odisha</button>
+                        </div>
+                        <p class="visually-hidden" aria-live="polite" data-dest-count></p>
+                        <ul class="map-tips">
+                            <li><span class="icon" aria-hidden="true">touch_app</span>Tap a pin to open the place</li>
+                            <li><span class="icon" aria-hidden="true">add</span>Add places to your trip as you go</li>
+                            <li><span class="icon" aria-hidden="true">luggage</span>Your trip builds itself <a href="#plan">below</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <p class="visually-hidden" aria-live="polite" data-dest-count></p>
 
                 <ul class="dest-grid" data-dest-grid></ul>
                 <noscript><p class="section-lead">Turn on JavaScript to browse the destination guide.</p></noscript>
@@ -284,25 +361,29 @@
                     <button class="tab" type="button" role="tab" id="tab-see" aria-controls="panel-see" aria-selected="true">See</button>
                     <button class="tab" type="button" role="tab" id="tab-go" aria-controls="panel-go" aria-selected="false" tabindex="-1">Getting there</button>
                     <button class="tab" type="button" role="tab" id="tab-eat" aria-controls="panel-eat" aria-selected="false" tabindex="-1">Eat</button>
+                    <button class="tab" type="button" role="tab" id="tab-guides" aria-controls="panel-guides" aria-selected="false" tabindex="-1">Guides</button>
                     <button class="tab" type="button" role="tab" id="tab-nearby" aria-controls="panel-nearby" aria-selected="false" tabindex="-1">Nearby</button>
                 </div>
                 <div class="tab-panel" role="tabpanel" id="panel-see" aria-labelledby="tab-see" tabindex="0" data-panel="see"></div>
                 <div class="tab-panel" role="tabpanel" id="panel-go" aria-labelledby="tab-go" tabindex="0" data-panel="go" hidden></div>
                 <div class="tab-panel" role="tabpanel" id="panel-eat" aria-labelledby="tab-eat" tabindex="0" data-panel="eat" hidden></div>
+                <div class="tab-panel" role="tabpanel" id="panel-guides" aria-labelledby="tab-guides" tabindex="0" data-panel="guides" hidden></div>
                 <div class="tab-panel" role="tabpanel" id="panel-nearby" aria-labelledby="tab-nearby" tabindex="0" data-panel="nearby" hidden></div>
 
                 <div class="dest-actions">
-                    <a class="btn btn-primary" href="#download" data-dest-close>
-                        Plan this trip in the app
-                        <span class="icon" aria-hidden="true">arrow_forward</span>
-                    </a>
+                    <button class="btn btn-primary trip-toggle" type="button" aria-pressed="false" data-trip-toggle data-dest-trip>
+                        <span class="icon trip-icon-add" aria-hidden="true">add</span>
+                        <span class="icon trip-icon-added" aria-hidden="true">check</span>
+                        <span data-trip-label>Add to trip</span>
+                    </button>
+                    <a class="btn btn-secondary" href="#plan" data-dest-close>See my trip</a>
                 </div>
                 <p class="dest-note">Distances are approximate. Opening times and seasons can change, so check locally before you travel.</p>
             </div>
         </dialog>
 
         <!-- Food -->
-        <section class="section section-surface" id="food" aria-labelledby="food-title">
+        <section class="section" id="food" aria-labelledby="food-title">
             <div class="container">
                 <div class="section-head section-head-split" data-reveal>
                     <div>
@@ -378,7 +459,7 @@
         </section>
 
         <!-- When to go -->
-        <section class="section" id="seasons" aria-labelledby="seasons-title">
+        <section class="section section-surface" id="seasons" aria-labelledby="seasons-title">
             <div class="container">
                 <div class="section-head section-head-split" data-reveal>
                     <div>
@@ -484,7 +565,7 @@
         </section>
 
         <!-- Homestays -->
-        <section class="section section-surface" id="stays" aria-labelledby="stays-title">
+        <section class="section" id="stays" aria-labelledby="stays-title">
             <div class="container">
                 <div class="section-head" data-reveal>
                     <p class="eyebrow">Stay local</p>
@@ -534,6 +615,175 @@
                     </article>
                 </div>
                 <p class="stay-note" data-reveal><span class="icon filled" aria-hidden="true">verified_user</span>Every homestay is a family home checked by our team, and hosts are paid straight to their ZipsWay wallet.</p>
+            </div>
+        </section>
+
+        <!-- Local guides -->
+        <section class="section section-surface" id="guides" aria-labelledby="guides-title">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <p class="eyebrow">Local guides</p>
+                    <h2 class="section-title" id="guides-title">See it with someone who grew up there.</h2>
+                    <p class="section-lead">Boatmen, trekkers, forest guides and artist families — booked in the same checkout as your ride and stay.</p>
+                </div>
+
+                <div class="guide-grid">
+                    <article class="card guide-card" data-reveal>
+                        <span class="card-icon"><span class="icon" aria-hidden="true">sailing</span></span>
+                        <h3>Birding boatmen</h3>
+                        <p>Dawn boat rides through Chilika’s reed channels and out to the dolphin waters.</p>
+                        <ul class="guide-meta">
+                            <li><span class="icon" aria-hidden="true">location_on</span>Mangalajodi, Satapada</li>
+                            <li><span class="icon" aria-hidden="true">translate</span>Odia, Hindi</li>
+                        </ul>
+                    </article>
+                    <article class="card guide-card" data-reveal style="--delay: 80ms">
+                        <span class="card-icon"><span class="icon" aria-hidden="true">hiking</span></span>
+                        <h3>Hill and trek guides</h3>
+                        <p>Deomali summit walks, village trails and weekly haats in the Eastern Ghats.</p>
+                        <ul class="guide-meta">
+                            <li><span class="icon" aria-hidden="true">location_on</span>Koraput, Daringbadi</li>
+                            <li><span class="icon" aria-hidden="true">translate</span>Odia, Desia, Kui, Hindi</li>
+                        </ul>
+                    </article>
+                    <article class="card guide-card" data-reveal style="--delay: 160ms">
+                        <span class="card-icon"><span class="icon" aria-hidden="true">forest</span></span>
+                        <h3>Forest and safari guides</h3>
+                        <p>Forest drives, creek safaris and gorge boat rides, registered with the forest department where parks require it.</p>
+                        <ul class="guide-meta">
+                            <li><span class="icon" aria-hidden="true">location_on</span>Similipal, Satkosia, Bhitarkanika</li>
+                            <li><span class="icon" aria-hidden="true">translate</span>Odia, Santali, Hindi</li>
+                        </ul>
+                    </article>
+                    <article class="card guide-card" data-reveal>
+                        <span class="card-icon"><span class="icon" aria-hidden="true">palette</span></span>
+                        <h3>Craft-village hosts</h3>
+                        <p>Studio visits with pattachitra painters and palm-leaf engravers, and demonstrations of their work.</p>
+                        <ul class="guide-meta">
+                            <li><span class="icon" aria-hidden="true">location_on</span>Raghurajpur</li>
+                            <li><span class="icon" aria-hidden="true">translate</span>Odia, Hindi, English</li>
+                        </ul>
+                    </article>
+                    <article class="card guide-card" data-reveal style="--delay: 80ms">
+                        <span class="card-icon"><span class="icon" aria-hidden="true">beach_access</span></span>
+                        <h3>Coast and estuary walks</h3>
+                        <p>Low-tide walks across Chandipur’s flats and along the river mouth, timed to the tides.</p>
+                        <ul class="guide-meta">
+                            <li><span class="icon" aria-hidden="true">location_on</span>Chandipur</li>
+                            <li><span class="icon" aria-hidden="true">translate</span>Odia, Bengali, Hindi</li>
+                        </ul>
+                    </article>
+                    <article class="card guide-card guide-card-cta" data-reveal style="--delay: 160ms">
+                        <span class="card-icon"><span class="icon" aria-hidden="true">verified_user</span></span>
+                        <h3>Every guide is verified</h3>
+                        <p>Guides complete ID checks before they can take bookings, and every trip is covered by 24/7 support.</p>
+                        <a class="btn btn-secondary btn-sm" href="#partners">Guide with ZipsWay</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trip planner -->
+        <section class="section" id="plan" aria-labelledby="plan-title">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <p class="eyebrow">Plan your trip</p>
+                    <h2 class="section-title" id="plan-title">Pick the places. We’ll do the planning.</h2>
+                    <p class="section-lead">Add places from the map or the guide, and ZipsWay works out how long to stay, when to go and where to start.</p>
+                </div>
+
+                <div class="planner" data-planner>
+                    <div class="planner-stops">
+                        <div class="planner-head">
+                            <h3>Your trip</h3>
+                            <button class="planner-clear" type="button" data-trip-clear hidden>Clear trip</button>
+                        </div>
+                        <div class="planner-empty" data-trip-empty>
+                            <span class="icon" aria-hidden="true">luggage</span>
+                            <p>Add places from the map or the guide to start a trip.</p>
+                            <p class="planner-samples-label">Or try a sample trip:</p>
+                            <div class="planner-samples">
+                                <button class="chip" type="button" data-trip-sample="raghurajpur,satapada,mangalajodi">Chilika &amp; crafts</button>
+                                <button class="chip" type="button" data-trip-sample="daringbadi,koraput">Southern hills</button>
+                                <button class="chip" type="button" data-trip-sample="similipal,chandipur,bhitarkanika">Forests &amp; coast</button>
+                            </div>
+                        </div>
+                        <ol class="route-list trip-list" data-trip-list></ol>
+                    </div>
+
+                    <aside class="planner-summary" aria-labelledby="summary-title">
+                        <h3 id="summary-title">Trip summary</h3>
+                        <dl class="summary-stats">
+                            <div><dt>Stops</dt><dd data-trip-count>0</dd></div>
+                            <div><dt>Suggested length</dt><dd data-trip-days>—</dd></div>
+                        </dl>
+                        <p class="summary-label">Best time for every stop</p>
+                        <ol class="month-strip" data-trip-months aria-describedby="months-note">
+                            <li data-m="1">J<span class="visually-hidden">anuary</span></li>
+                            <li data-m="2">F<span class="visually-hidden">ebruary</span></li>
+                            <li data-m="3">M<span class="visually-hidden">arch</span></li>
+                            <li data-m="4">A<span class="visually-hidden">pril</span></li>
+                            <li data-m="5">M<span class="visually-hidden">ay</span></li>
+                            <li data-m="6">J<span class="visually-hidden">une</span></li>
+                            <li data-m="7">J<span class="visually-hidden">uly</span></li>
+                            <li data-m="8">A<span class="visually-hidden">ugust</span></li>
+                            <li data-m="9">S<span class="visually-hidden">eptember</span></li>
+                            <li data-m="10">O<span class="visually-hidden">ctober</span></li>
+                            <li data-m="11">N<span class="visually-hidden">ovember</span></li>
+                            <li data-m="12">D<span class="visually-hidden">ecember</span></li>
+                        </ol>
+                        <p class="summary-note" id="months-note" data-trip-months-note>Add a place to see its best months.</p>
+                        <p class="summary-label">Start from</p>
+                        <p class="summary-hubs" data-trip-hubs>—</p>
+                        <a class="btn btn-primary" href="#download">
+                            Book this trip in the app
+                            <span class="icon" aria-hidden="true">arrow_forward</span>
+                        </a>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sustainable tourism -->
+        <section class="promise promise-green" id="sustainable" aria-labelledby="sustainable-title">
+            <div class="container">
+                <div class="promise-head" data-reveal>
+                    <p class="eyebrow eyebrow-on-dark">Tourism that stays local</p>
+                    <h2 class="section-title" id="sustainable-title">Growth that Odisha’s villages share in.</h2>
+                    <p class="promise-lead">At Mangalajodi, former bird poachers became guides and the wetland recovered. ZipsWay is built to grow more tourism like that.</p>
+                </div>
+
+                <div class="promise-grid">
+                    <div class="promise-item" data-reveal>
+                        <span class="promise-icon"><span class="icon" aria-hidden="true">payments</span></span>
+                        <h3>Money stays in the village</h3>
+                        <p>Homestays, cooks, guides and drivers are paid straight to their ZipsWay wallet.</p>
+                    </div>
+                    <div class="promise-item" data-reveal style="--delay: 80ms">
+                        <span class="promise-icon"><span class="icon" aria-hidden="true">groups</span></span>
+                        <h3>Spreading the visitors</h3>
+                        <p>Offbeat places and season guidance ease the pressure on crowded hotspots.</p>
+                    </div>
+                    <div class="promise-item" data-reveal style="--delay: 160ms">
+                        <span class="promise-icon"><span class="icon" aria-hidden="true">park</span></span>
+                        <h3>Protected places, protected</h3>
+                        <p>Park seasons and rules are built into every destination, so trips fit around wildlife.</p>
+                    </div>
+                    <div class="promise-item" data-reveal style="--delay: 240ms">
+                        <span class="promise-icon"><span class="icon" aria-hidden="true">eco</span></span>
+                        <h3>Travel lightly</h3>
+                        <p>Ask before photographing people, keep plastic out of forests and lagoons, and follow park rules.</p>
+                    </div>
+                </div>
+
+                <div class="measure" data-reveal>
+                    <p class="measure-label"><span class="icon" aria-hidden="true">insights</span>What we measure</p>
+                    <ul>
+                        <li>Bookings in rural areas</li>
+                        <li>Earnings paid to local hosts</li>
+                        <li>Share of trips taken off-peak</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -683,11 +933,6 @@
                         <h3>24/7 support</h3>
                         <p>Ask the in-app help assistant, or raise a ticket straight from any booking.</p>
                     </div>
-                    <div class="promise-item" data-reveal style="--delay: 240ms">
-                        <span class="promise-icon"><span class="icon" aria-hidden="true">eco</span></span>
-                        <h3>Travel lightly</h3>
-                        <p>Ask before photographing people, keep plastic out of forests and lagoons, and follow park rules.</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -778,6 +1023,18 @@
                         <p>Not everywhere. Coverage is patchy or absent in places like Similipal, the Satkosia gorge and around Deomali. Each destination’s Nearby tab notes the network situation, so you know when to save details ahead and carry cash.</p>
                     </details>
                     <details>
+                        <summary>How do I book a local guide?</summary>
+                        <p>Open a destination and check its Guides tab for the kinds of guide available there, with what they offer and the languages they speak. Add a guide when you book your ride or stay — it’s all one checkout.</p>
+                    </details>
+                    <details>
+                        <summary>Can I save a trip and finish it later?</summary>
+                        <p>Yes. Places you add to a trip stay saved on your device, so you can come back, reorder stops and book when you’re ready.</p>
+                    </details>
+                    <details>
+                        <summary>How accurate is the map?</summary>
+                        <p>Pins show roughly where each place is, to help you see how a trip fits together. Use the Getting there tab for stations, airports and road distances, and check routes locally before you set off.</p>
+                    </details>
+                    <details>
                         <summary>How do homestays work?</summary>
                         <p>Pick a family-run homestay near your destination and book it in the same checkout as your ride. Meals with the family are usually included, and you pay in the app.</p>
                     </details>
@@ -828,6 +1085,12 @@
         </section>
     </main>
 
+    <!-- Shown by main.js once a trip has stops. -->
+    <a class="trip-fab" href="#plan" data-trip-fab hidden>
+        <span class="icon" aria-hidden="true">luggage</span>
+        <span>My trip · <span data-trip-fab-count>0</span></span>
+    </a>
+
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-brand">
@@ -844,10 +1107,13 @@
 
             <nav class="footer-col" aria-label="Explore">
                 <h2>Explore</h2>
-                <a href="#destinations">Destinations</a>
+                <a href="#destinations">Destinations &amp; map</a>
+                <a href="#guides">Local guides</a>
+                <a href="#plan">Plan a trip</a>
                 <a href="#food">Taste of Odisha</a>
                 <a href="#seasons">When to go</a>
                 <a href="#stays">Homestays</a>
+                <a href="#sustainable">Sustainable tourism</a>
                 <a href="#faq">FAQ</a>
             </nav>
             <nav class="footer-col" aria-label="Partner with us">
@@ -868,7 +1134,8 @@
         </div>
         <div class="container">
             <details class="credits">
-                <summary>Photo credits</summary>
+                <summary>Credits</summary>
+                <p>Map outline of Odisha from the <a href="https://www.geoboundaries.org/">geoBoundaries</a> dataset, sourced from the DataMeet India community, <a href="https://creativecommons.org/licenses/by/2.5/in/">CC BY 2.5 IN</a>; simplified for this page.</p>
                 <p>Photos from Wikimedia Commons, used under the licences shown and cropped for layout.</p>
                 <ul>
                         <li>Mangalajodi: <a href="https://commons.wikimedia.org/wiki/File:Mangalajodi_on_the_banks_of_the_Chilika_lake.jpg">“Mangalajodi on the banks of the Chilika lake”</a> by Neerakiran, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>

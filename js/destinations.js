@@ -1,6 +1,8 @@
 // The destination guide. Cards, the region filter and the detail window
 // are all built from this list by main.js — add a place by adding an entry.
-// Distances are approximate road distances; photo credits are in index.html.
+// Distances and coordinates are approximate; photo credits are in index.html.
+// months: best months (1–12, matching season); days: suggested length of stay,
+// used by the trip planner; guides: [role, what they offer, languages].
 window.ZIPSWAY_REGIONS = {
     coast: 'Coast & lagoons',
     hills: 'Southern hills',
@@ -8,9 +10,23 @@ window.ZIPSWAY_REGIONS = {
     west: 'Western Odisha',
 };
 
+// Hub towns labelled on the map, with which side of the dot the label sits.
+window.ZIPSWAY_HUBS = [
+    { name: 'Bhubaneswar', lat: 20.30, lng: 85.82, side: 'right' },
+    { name: 'Sambalpur', lat: 21.47, lng: 83.97, side: 'right' },
+    { name: 'Berhampur', lat: 19.31, lng: 84.79, side: 'right' },
+    { name: 'Baripada', lat: 21.94, lng: 86.72, side: 'right' },
+];
+
 window.ZIPSWAY_DESTINATIONS = [
     {
         id: 'mangalajodi',
+        coords: { lat: 19.88, lng: 85.43 },
+        months: [11, 12, 1, 2],
+        days: 1,
+        guides: [
+            ['Birding boatman', 'Dawn boat rides through the reed channels, spotting and naming the birds.', 'Odia, Hindi, some English'],
+        ],
         name: 'Mangalajodi',
         district: 'Khordha',
         region: 'coast',
@@ -39,6 +55,12 @@ window.ZIPSWAY_DESTINATIONS = [
     },
     {
         id: 'satapada',
+        coords: { lat: 19.66, lng: 85.45 },
+        months: [10, 11, 12, 1, 2, 3],
+        days: 1,
+        guides: [
+            ['Dolphin-trip boatman', 'Boat trips to the dolphin waters and on to the sea mouth.', 'Odia, Hindi'],
+        ],
         name: 'Satapada',
         district: 'Puri',
         region: 'coast',
@@ -67,6 +89,12 @@ window.ZIPSWAY_DESTINATIONS = [
     },
     {
         id: 'daringbadi',
+        coords: { lat: 19.9, lng: 84.13 },
+        months: [11, 12, 1, 2],
+        days: 2,
+        guides: [
+            ['Hill guide', 'Walks through the pine forest and coffee gardens, and trips to the waterfalls.', 'Odia, Kui, Hindi'],
+        ],
         name: 'Daringbadi',
         district: 'Kandhamal',
         region: 'hills',
@@ -95,6 +123,13 @@ window.ZIPSWAY_DESTINATIONS = [
     },
     {
         id: 'koraput',
+        coords: { lat: 18.68, lng: 82.98 },
+        months: [10, 11, 12, 1, 2],
+        days: 3,
+        guides: [
+            ['Trek guide', 'Deomali summit walks and village trails.', 'Odia, Desia, Hindi'],
+            ['Haat guide', 'Weekly market visits, with introductions and photo etiquette.', 'Odia, Desia'],
+        ],
         name: 'Koraput hills',
         district: 'Koraput',
         region: 'hills',
@@ -123,6 +158,12 @@ window.ZIPSWAY_DESTINATIONS = [
     },
     {
         id: 'bhitarkanika',
+        coords: { lat: 20.72, lng: 86.89 },
+        months: [11, 12, 1, 2],
+        days: 2,
+        guides: [
+            ['Creek boat guide', 'Safaris to the crocodile banks, with forest-department boats.', 'Odia, Hindi'],
+        ],
         name: 'Bhitarkanika',
         district: 'Kendrapara',
         region: 'coast',
@@ -151,6 +192,12 @@ window.ZIPSWAY_DESTINATIONS = [
     },
     {
         id: 'satkosia',
+        coords: { lat: 20.6, lng: 84.8 },
+        months: [10, 11, 12, 1, 2, 3],
+        days: 2,
+        guides: [
+            ['River and forest guide', 'Gorge boat rides and nature walks from Tikarpada.', 'Odia, Hindi'],
+        ],
         name: 'Satkosia',
         district: 'Angul',
         region: 'forests',
@@ -179,6 +226,12 @@ window.ZIPSWAY_DESTINATIONS = [
     },
     {
         id: 'similipal',
+        coords: { lat: 21.8, lng: 86.3 },
+        months: [11, 12, 1, 2, 3, 4, 5, 6],
+        days: 2,
+        guides: [
+            ['Safari guide', 'Forest drives to the waterfalls and grasslands.', 'Odia, Santali, Hindi'],
+        ],
         name: 'Similipal',
         district: 'Mayurbhanj',
         region: 'forests',
@@ -207,6 +260,12 @@ window.ZIPSWAY_DESTINATIONS = [
     },
     {
         id: 'raghurajpur',
+        coords: { lat: 19.92, lng: 85.83 },
+        months: [10, 11, 12, 1, 2, 3],
+        days: 1,
+        guides: [
+            ['Craft-village host', 'Studio visits and demonstrations by the artist families.', 'Odia, Hindi, English'],
+        ],
         name: 'Raghurajpur',
         district: 'Puri',
         region: 'coast',
@@ -235,6 +294,12 @@ window.ZIPSWAY_DESTINATIONS = [
     },
     {
         id: 'chandipur',
+        coords: { lat: 21.45, lng: 87.02 },
+        months: [10, 11, 12, 1, 2, 3],
+        days: 1,
+        guides: [
+            ['Coast walk guide', 'Low-tide walks across the flats and along the estuary.', 'Odia, Bengali, Hindi'],
+        ],
         name: 'Chandipur',
         district: 'Balasore',
         region: 'coast',
@@ -263,6 +328,12 @@ window.ZIPSWAY_DESTINATIONS = [
     },
     {
         id: 'hirakud',
+        coords: { lat: 21.52, lng: 83.87 },
+        months: [10, 11, 12, 1, 2],
+        days: 1,
+        guides: [
+            ['Dam and reservoir guide', 'Dam viewpoints, birding on the reservoir and trips into Debrigarh.', 'Odia, Sambalpuri, Hindi'],
+        ],
         name: 'Hirakud',
         district: 'Sambalpur',
         region: 'west',

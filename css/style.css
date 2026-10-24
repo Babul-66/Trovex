@@ -39,6 +39,14 @@
     --radius-lg: 16px;
     --radius-xl: 24px;
 
+
+    --region-coast: #2F80ED;
+    --region-hills: #D9731C;
+    --region-forests: #219653;
+    --region-west: #9B51E0;
+    --green-from: #0B3D33;
+    --green-to: #135A45;
+
     --header-h: 72px;
     --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
@@ -69,6 +77,13 @@
         --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
         --shadow-lg: 0 24px 60px -12px rgba(0, 0, 0, 0.6);
         --focus: #F7B733;
+
+        --region-coast: #5B9CF6;
+        --region-hills: #FFA85C;
+        --region-forests: #34C77A;
+        --region-west: #BB86FC;
+        --green-from: #07231D;
+        --green-to: #0D3B2E;
     }
 }
 
@@ -97,6 +112,13 @@
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
     --shadow-lg: 0 24px 60px -12px rgba(0, 0, 0, 0.6);
     --focus: #F7B733;
+
+    --region-coast: #5B9CF6;
+    --region-hills: #FFA85C;
+    --region-forests: #34C77A;
+    --region-west: #BB86FC;
+    --green-from: #07231D;
+    --green-to: #0D3B2E;
 }
 
 /* ==========================================================================
@@ -148,6 +170,11 @@ ul, ol {
 
 svg {
     display: block;
+}
+
+/* Components that set their own display still honour the hidden attribute. */
+[hidden] {
+    display: none !important;
 }
 
 :focus-visible {
@@ -1784,8 +1811,11 @@ html:has(.dest-dialog[open]) {
 .promise-grid {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
+}
+.promise-green .promise-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 .promise-item {
     padding: 28px;
@@ -2399,5 +2429,731 @@ html:has(.dest-dialog[open]) {
     }
     .dest-dialog-img {
         aspect-ratio: 16 / 9;
+    }
+}
+
+/* ==========================================================================
+   All in one place — comparison + hub diagram
+   ========================================================================== */
+.platform-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: center;
+    gap: clamp(40px, 6vw, 80px);
+}
+.platform-grid .section-head {
+    margin-bottom: 32px;
+}
+.compare {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+.compare-col {
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: var(--surface);
+}
+.compare-after {
+    border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+    box-shadow: var(--shadow-sm);
+}
+.compare-label {
+    margin-bottom: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-2);
+}
+.compare-after .compare-label {
+    color: var(--ink);
+}
+.compare ul {
+    display: grid;
+    gap: 10px;
+}
+.compare li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9375rem;
+    color: var(--text-2);
+}
+.compare-after li {
+    color: var(--text);
+}
+.compare .icon {
+    font-size: 1.25rem;
+}
+.compare-before .icon {
+    color: var(--text-2);
+    opacity: 0.7;
+}
+.compare-after .icon {
+    color: var(--success);
+}
+
+/* Eight nodes on a dashed ring, positioned with container-relative units. */
+.hub {
+    position: relative;
+    width: min(100%, 460px);
+    aspect-ratio: 1;
+    margin: 0 auto;
+    container-type: inline-size;
+}
+.hub-ring {
+    position: absolute;
+    inset: 12%;
+    border: 2px dashed var(--route);
+    border-radius: 50%;
+}
+.hub-center {
+    position: absolute;
+    inset: 33%;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: 6px;
+    border-radius: 50%;
+    background: var(--surface);
+    box-shadow: var(--shadow-lg);
+}
+.hub-center svg {
+    width: 28cqw;
+    max-width: 64px;
+    height: auto;
+}
+.hub-center strong {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(0.875rem, 4cqw, 1.125rem);
+    font-weight: 700;
+}
+.hub-nodes li {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 24cqw;
+    margin-left: -12cqw;
+    margin-top: -6cqw;
+    padding-bottom: 2px;
+    border-radius: 8px;
+    /* Matches the section so the dashed ring passes behind each node. */
+    background: var(--section-bg, var(--bg));
+    font-size: clamp(0.6875rem, 2.9cqw, 0.8125rem);
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    transform: rotate(calc(var(--i) * 45deg)) translateY(-38cqw) rotate(calc(var(--i) * -45deg));
+}
+.hub-nodes .icon {
+    display: grid;
+    place-items: center;
+    width: 12cqw;
+    height: 12cqw;
+    max-width: 52px;
+    max-height: 52px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--ink);
+    font-size: clamp(1.125rem, 5.2cqw, 1.5rem);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================================
+   Odisha map
+   ========================================================================== */
+.explore-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(24px, 4vw, 48px);
+    margin-bottom: 40px;
+}
+.map-card {
+    padding: clamp(12px, 2vw, 24px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: var(--bg);
+}
+.map {
+    position: relative;
+    aspect-ratio: 1000 / 839;
+}
+.map-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+.map-land {
+    fill: var(--ink-soft);
+    stroke: var(--route);
+    stroke-width: 3;
+    stroke-linejoin: round;
+}
+.map-caption {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    font-size: 0.8125rem;
+    color: var(--text-2);
+}
+.map-caption .icon {
+    font-size: 1.125rem;
+}
+
+/* The button is the tap target, centred on the coordinate; the label hangs off it. */
+.map-pin {
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: none;
+    color: var(--text);
+    font: inherit;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.25s;
+}
+.map-dot {
+    width: 16px;
+    height: 16px;
+    border: 3px solid var(--surface);
+    border-radius: 50%;
+    background: var(--pin, var(--ink));
+    box-shadow: 0 0 0 1px rgba(13, 10, 50, 0.25), 0 3px 8px rgba(13, 10, 50, 0.3);
+    transition: transform 0.2s var(--ease);
+}
+.map-pin:hover .map-dot,
+.map-pin:focus-visible .map-dot {
+    transform: scale(1.35);
+}
+.map-label {
+    position: absolute;
+    top: 50%;
+    left: calc(100% - 4px);
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--surface) 88%, transparent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.label-left .map-label {
+    left: auto;
+    right: calc(100% - 4px);
+}
+.map-pin:hover,
+.map-pin:focus-visible {
+    z-index: 3;
+}
+.map-pin.is-dimmed {
+    opacity: 0.25;
+}
+.map-hub {
+    position: absolute;
+    z-index: 1;
+    padding-left: 10px;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: var(--text-2);
+    white-space: nowrap;
+    transform: translate(-3px, -50%);
+    pointer-events: none;
+}
+.map-hub::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    margin-top: -3px;
+    border-radius: 50%;
+    background: var(--text-2);
+}
+
+.region-coast { --pin: var(--region-coast); }
+.region-hills { --pin: var(--region-hills); }
+.region-forests { --pin: var(--region-forests); }
+.region-west { --pin: var(--region-west); }
+
+.map-aside h3 {
+    margin-bottom: 14px;
+    font-size: 1.125rem;
+}
+.map-aside .dest-filters {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+}
+.map-aside .chip {
+    justify-content: flex-start;
+}
+.region-dot {
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: conic-gradient(var(--region-coast) 0 25%, var(--region-hills) 0 50%, var(--region-forests) 0 75%, var(--region-west) 0);
+}
+.region-dot.region-coast,
+.region-dot.region-hills,
+.region-dot.region-forests,
+.region-dot.region-west {
+    background: var(--pin);
+}
+.chip[aria-pressed="true"] .region-dot {
+    box-shadow: 0 0 0 2px var(--cta-fg);
+}
+.map-tips {
+    display: grid;
+    gap: 10px;
+    font-size: 0.875rem;
+    color: var(--text-2);
+}
+.map-tips li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.map-tips .icon {
+    font-size: 1.25rem;
+    color: var(--ink);
+}
+.map-tips a {
+    color: var(--ink);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Cards and controls on a surface-coloured section use the page tone. */
+.section-surface .dest-card,
+.section-surface .month-card,
+.section-surface .chip,
+.section-surface .compare-col {
+    background: var(--bg);
+}
+.section-surface .chip[aria-pressed="true"] {
+    background: var(--cta-bg);
+}
+
+/* ==========================================================================
+   Add-to-trip toggles
+   ========================================================================== */
+.dest-item {
+    position: relative;
+}
+.trip-add {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(13, 10, 50, 0.6);
+    color: #fff;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: background-color 0.2s, transform 0.2s var(--ease);
+}
+.trip-add:hover {
+    transform: scale(1.08);
+}
+.trip-add[aria-pressed="true"] {
+    background: var(--accent);
+    color: #0D0A32;
+}
+.trip-toggle .trip-icon-added,
+.trip-toggle[aria-pressed="true"] .trip-icon-add {
+    display: none;
+}
+.trip-toggle[aria-pressed="true"] .trip-icon-added {
+    display: inline-block;
+}
+.dest-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.dest-actions .trip-toggle[aria-pressed="true"] {
+    background: var(--success);
+    color: #fff;
+}
+.info-sub {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+    font-size: 0.8125rem;
+}
+.info-list .info-sub .icon {
+    width: auto;
+    height: auto;
+    padding: 0;
+    background: none;
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   Local guides
+   ========================================================================== */
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+.guide-meta {
+    display: grid;
+    gap: 6px;
+    margin-top: auto;
+    padding-top: 6px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-2);
+}
+.guide-meta li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.guide-meta .icon {
+    font-size: 1rem;
+    color: var(--ink);
+}
+.section-surface .guide-card-cta,
+.guide-card-cta {
+    border-color: color-mix(in srgb, var(--accent) 50%, transparent);
+    background: var(--accent-soft);
+}
+.guide-card-cta .card-icon {
+    background: var(--surface);
+}
+.guide-card-cta .btn {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+/* ==========================================================================
+   Trip planner
+   ========================================================================== */
+.planner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 20px;
+}
+.planner-stops,
+.planner-summary {
+    padding: clamp(20px, 3vw, 28px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: var(--surface);
+}
+.planner-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+.planner-head h3,
+.planner-summary h3 {
+    font-size: 1.1875rem;
+}
+.planner-clear {
+    border: 0;
+    background: none;
+    color: var(--text-2);
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+}
+.planner-clear:hover {
+    color: var(--text);
+}
+.planner-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 24px 8px 12px;
+    text-align: center;
+    color: var(--text-2);
+}
+.planner-empty > .icon {
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--ink-soft);
+    color: var(--ink);
+    font-size: 2rem;
+}
+.planner-samples-label {
+    margin-top: 10px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+.planner-samples {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+.planner-samples .chip {
+    background: var(--bg);
+}
+
+.trip-list {
+    --section-bg: var(--surface);
+}
+.trip-list li::before {
+    top: 15px;
+}
+.trip-list li:not(:last-child)::after {
+    top: 39px;
+}
+.trip-stop {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.trip-stop img {
+    flex-shrink: 0;
+    width: 64px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+    background: var(--surface-2);
+}
+.trip-stop-text {
+    flex: 1;
+    min-width: 0;
+}
+.trip-stop-text strong {
+    color: var(--text);
+}
+.trip-stop-text span {
+    display: block;
+    font-size: 0.8125rem;
+}
+.trip-stop-actions {
+    display: flex;
+    flex-shrink: 0;
+}
+.trip-stop-actions .icon-btn {
+    width: 36px;
+    height: 36px;
+}
+.trip-stop-actions .icon {
+    font-size: 1.25rem;
+}
+.trip-stop-actions .icon-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+.trip-stop-actions .icon-btn:disabled:hover {
+    background: none;
+}
+
+.planner-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.summary-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 6px 0 8px;
+}
+.summary-stats div {
+    padding: 14px;
+    border-radius: var(--radius-md);
+    background: var(--bg);
+}
+.summary-stats dt {
+    font-size: 0.75rem;
+    color: var(--text-2);
+}
+.summary-stats dd {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+}
+.summary-label {
+    margin-top: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-2);
+}
+.month-strip {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 4px;
+}
+.month-strip li {
+    display: grid;
+    place-items: center;
+    height: 30px;
+    border-radius: 6px;
+    background: var(--surface-2);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-2);
+}
+.month-strip li.is-on {
+    background: var(--accent);
+    color: #0D0A32;
+}
+.summary-note,
+.summary-hubs {
+    font-size: 0.875rem;
+    color: var(--text-2);
+}
+.summary-hubs {
+    color: var(--text);
+    font-weight: 500;
+}
+.planner-summary .btn {
+    margin-top: 10px;
+}
+
+.trip-fab {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 900;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px 12px 14px;
+    border-radius: 999px;
+    background: var(--cta-bg);
+    color: var(--cta-fg);
+    font-weight: 600;
+    box-shadow: var(--shadow-lg);
+    transition: opacity 0.25s, transform 0.25s var(--ease);
+}
+.trip-fab.is-away {
+    opacity: 0;
+    transform: translateY(16px);
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   Sustainable tourism band
+   ========================================================================== */
+.promise-green {
+    background: linear-gradient(135deg, var(--green-from), var(--green-to));
+}
+.promise-green .promise-icon {
+    background: rgba(255, 255, 255, 0.1);
+    color: #7EE2B0;
+}
+.measure {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px 20px;
+    margin-top: 40px;
+}
+.measure-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: #F7B733;
+}
+.measure ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.measure li {
+    padding: 6px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ==========================================================================
+   Responsive — innovation sections
+   ========================================================================== */
+@media (max-width: 1080px) {
+    .promise-green .promise-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 960px) {
+    .platform-grid,
+    .explore-grid,
+    .planner {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .guide-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .map-aside .dest-filters {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 640px) {
+    .compare,
+    .guide-grid,
+    .promise-green .promise-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .hub {
+        width: min(100%, 360px);
+    }
+    /* Labels would crowd a phone-width map; tapping a pin opens the place. */
+    .map-label,
+    .map-hub {
+        display: none;
+    }
+    .map-pin {
+        width: 44px;
+        height: 44px;
+    }
+    .trip-stop img {
+        display: none;
+    }
+    .trip-fab {
+        right: 16px;
+        bottom: 16px;
     }
 }
