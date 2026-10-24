@@ -1,6 +1,7 @@
 /* ==========================================================================
    Tokens — mirror trovex_mobile/lib/config/theme.dart (AppPalette) so the
-   site and the app read as one brand. Dark values are the app's dark theme.
+   site and the app read as one brand. Light is the default; the dark values (the app's dark theme) apply only
+   when a visitor picks dark with the toggle.
    ========================================================================== */
 :root {
     --bg: #F8F9FA;
@@ -49,45 +50,11 @@
 
     --header-h: 72px;
     --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-        --bg: #0F0E1A;
-        --surface: #17162A;
-        --surface-2: #1F1E38;
-        --border: #322F52;
-        --text: #F2F1F8;
-        --text-2: #A6A3C2;
-        --ink: #CFC9ED;
-        --ink-soft: #221E4A;
-        --accent: #F7B733;
-        --accent-soft: #3A2A12;
-        --route: #4535A0;
-        --cta-bg: #F7B733;
-        --cta-fg: #0D0A32;
-        --cta-hover: #F9C666;
-        --female-soft: #3A1A2A;
-        --female-text: #F48FB6;
-        --success: #34C77A;
-        --band-from: #0D0A32;
-        --band-to: #1F1570;
-        --hero-glow: #1A1740;
-        --header-bg: rgba(15, 14, 26, 0.82);
-        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-        --shadow-lg: 0 24px 60px -12px rgba(0, 0, 0, 0.6);
-        --focus: #F7B733;
-
-        --region-coast: #5B9CF6;
-        --region-hills: #FFA85C;
-        --region-forests: #34C77A;
-        --region-west: #BB86FC;
-        --green-from: #07231D;
-        --green-to: #0D3B2E;
-    }
+    color-scheme: light;
 }
 
 :root[data-theme="dark"] {
+    color-scheme: dark;
     --bg: #0F0E1A;
     --surface: #17162A;
     --surface-2: #1F1E38;
@@ -483,15 +450,6 @@ svg {
 :root[data-theme="dark"] .theme-toggle .icon-to-dark {
     display: none;
 }
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .theme-toggle .icon-to-light {
-        display: inline-block;
-    }
-    :root:not([data-theme="light"]) .theme-toggle .icon-to-dark {
-        display: none;
-    }
-}
-
 .nav-toggle {
     display: none;
     flex-direction: column;

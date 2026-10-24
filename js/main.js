@@ -42,13 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    // Theme toggle. The saved choice is applied in <head> before first paint;
-    // with no saved choice the page follows the OS setting.
-    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const currentTheme = () => root.dataset.theme || (darkQuery.matches ? 'dark' : 'light');
+    // Theme toggle. The site opens in light mode; a visitor's saved choice is
+    // applied in <head> before first paint.
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    const currentTheme = () => (root.dataset.theme === 'dark' ? 'dark' : 'light');
     const syncThemeLabel = () => {
-        const next = currentTheme() === 'dark' ? 'light' : 'dark';
-        themeToggle.setAttribute('aria-label', `Switch to ${next} theme`);
+        const dark = currentTheme() === 'dark';
+        themeToggle.setAttribute('aria-label', `Switch to ${dark ? 'light' : 'dark'} theme`);
+        // Keep the mobile browser's address bar in step with the page.
+        themeColor?.setAttribute('content', dark ? '#0F0E1A' : '#F8F9FA');
     };
 
     themeToggle.addEventListener('click', () => {
@@ -62,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         syncThemeLabel();
     });
-    darkQuery.addEventListener('change', syncThemeLabel);
     syncThemeLabel();
 
     // Destination cards — rendered before the reveal observer below picks
