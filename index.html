@@ -38,9 +38,9 @@
     <!-- Bump ?v= whenever a CSS or JS file changes. GitHub Pages caches files
          for 10 minutes and a normal reload reuses cached CSS/JS, so without a
          new URL fresh HTML can be paired with a stale stylesheet. -->
-    <link rel="stylesheet" href="css/style.css?v=5">
-    <script src="js/destinations.js?v=5" defer></script>
-    <script src="js/main.js?v=5" defer></script>
+    <link rel="stylesheet" href="css/style.css?v=6">
+    <script src="js/destinations.js?v=6" defer></script>
+    <script src="js/main.js?v=6" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -1068,16 +1068,17 @@
                         <h2 class="section-title" id="download-title">Your Odisha trip starts in the app.</h2>
                         <p>Find a place, plan the route, book the ride and the stay — all from your phone.</p>
                     </div>
-                    <!-- TODO: replace both hrefs with the live store listing URLs. -->
+                    <!-- When the apps launch: make each badge an <a class="store-btn" href="store URL">
+                         and change "Coming soon" back to "Get it on" / "Download on the". -->
                     <div class="store-buttons">
-                        <a class="store-btn" href="#download">
+                        <span class="store-btn is-soon">
                             <span class="icon" aria-hidden="true">android</span>
-                            <span><small>Get it on</small>Google Play</span>
-                        </a>
-                        <a class="store-btn" href="#download">
+                            <span><small>Coming soon</small>Google Play</span>
+                        </span>
+                        <span class="store-btn is-soon">
                             <span class="icon" aria-hidden="true">phone_iphone</span>
-                            <span><small>Download on the</small>App Store</span>
-                        </a>
+                            <span><small>Coming soon</small>App Store</span>
+                        </span>
                     </div>
                 </div>
             </div>
