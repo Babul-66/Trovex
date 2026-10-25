@@ -99,14 +99,10 @@
     box-sizing: border-box;
 }
 
+/* No scroll-behavior: smooth — in-page links (nav, buttons) jump straight to
+   their section instead of scrolling through the page. */
 html {
     -webkit-text-size-adjust: 100%;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    html {
-        scroll-behavior: smooth;
-    }
 }
 
 body {
